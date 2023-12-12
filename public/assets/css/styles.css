@@ -138,8 +138,8 @@ nav .container ul {
     height: 40vh;
     width: 95%;
     border-radius: 10px;
+  }
 }
-
 .About_Page .hero {
   height: 20vh;
   background: linear-gradient(120deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/founders.jpg");
@@ -249,6 +249,9 @@ nav .container ul {
 Footer {
   background: #000;
   color: #fff;
+}
+Footer .container h1 {
+  text-align: unset;
 }
 Footer .container a {
   text-decoration: none;

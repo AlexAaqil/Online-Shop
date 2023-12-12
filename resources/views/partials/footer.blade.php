@@ -1,6 +1,6 @@
 <Footer>
     <div class="container">
-        <div class="brand">
+        <div class="branding">
             <h1>Online Shop</h1>
             <p>Shop online at your convenience</p>
         </div>
