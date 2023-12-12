@@ -8,7 +8,6 @@ Uses Laravel
     `composer install`\
     `npm install`
 
-2. Generate the application key: \
+2. Copy the .env.example into a file named `.env` 
+3. Generate the application key: \
     `php artisan key:generate`
-
-3. Copy the .env.example into a file named `.env`
