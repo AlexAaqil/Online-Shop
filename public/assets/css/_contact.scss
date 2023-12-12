@@ -1,0 +1,52 @@
+.Contact {
+    padding: 3em 0;
+
+    .container {
+        .contact_details {
+            h2 {
+                font-size: 1.5em;
+            }
+
+            h3 {
+                font-size: 1em;
+            }
+
+            div {
+                margin: 0 0 1em;
+            }
+        }
+
+        .contact_form {
+            form {
+                input,
+                textarea {
+                    width: 100%;
+                    margin: 0 0 0.5em;
+                    padding: 0.4em;
+                    border: 1px solid grey;
+                    border-radius: 8px;
+                    font-size: 1em;
+                }
+
+                button {
+                    background: rgb(1, 51, 1);
+                    color: #fff;
+                    padding: 12px 16px;
+                    border: none;
+                    border-radius: 8px;
+                    font-weight: 500;
+                    font-size: 1.1em;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (width >= 900px) {
+    .Contact {
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}
