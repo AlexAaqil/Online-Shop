@@ -9,6 +9,32 @@
   padding: 10px 5%;
 }
 
+nav {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: #fff;
+  box-shadow: 1px 2px 8px black;
+}
+nav a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+}
+nav .container,
+nav ul {
+  display: flex;
+  align-items: center;
+}
+nav .container {
+  justify-content: space-between;
+}
+nav .container ul {
+  list-style: none;
+  justify-content: space-evenly;
+  gap: 0 2em;
+}
+
 .Homepage .Hero {
   height: 50vh;
   background: linear-gradient(120deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/shop.jpg);
@@ -112,5 +138,144 @@
     height: 40vh;
     width: 95%;
     border-radius: 10px;
+}
+
+.About_Page .hero {
+  height: 20vh;
+  background: linear-gradient(120deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/founders.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.5em 0 2em;
+}
+.About_Page .hero h1 {
+  color: #fff;
+}
+.About_Page .container .story {
+  margin: 0 0 2em;
+}
+.About_Page .container h2 {
+  text-align: center;
+  margin: 0 0 0.5em;
+}
+.About_Page .container .team_members .member {
+  text-align: center;
+  margin: 0 0 2em;
+}
+.About_Page .container .team_members .member img {
+  width: 100%;
+  height: 350px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
+  border-radius: 16px;
+}
+.About_Page .container .team_members .member ul {
+  list-style: none;
+  margin: 0.5em 0;
+  display: flex;
+  justify-content: center;
+  gap: 0 2em;
+}
+.About_Page .container .team_members .member ul li a {
+  font-size: 1.5em;
+  color: #000;
+}
+.About_Page .container .team_members .member p {
+  font-size: bold;
+  font-size: 1.5em;
+}
+
+@media screen and (width >= 900px) {
+  .About_Page .hero {
+    height: 50vh;
+  }
+  .About_Page .hero h1 {
+    font-size: 3em;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  .About_Page .container .story {
+    margin: 0.5em 0 3em;
+  }
+  .About_Page .container .team_members {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .About_Page .container .team_members .member img {
+    width: 300px;
+  }
+}
+.Contact {
+  padding: 3em 0;
+}
+.Contact .container .contact_details h2 {
+  font-size: 1.5em;
+}
+.Contact .container .contact_details h3 {
+  font-size: 1em;
+}
+.Contact .container .contact_details div {
+  margin: 0 0 1em;
+}
+.Contact .container .contact_form form input,
+.Contact .container .contact_form form textarea {
+  width: 100%;
+  margin: 0 0 0.5em;
+  padding: 0.4em;
+  border: 1px solid grey;
+  border-radius: 8px;
+  font-size: 1em;
+}
+.Contact .container .contact_form form button {
+  background: rgb(1, 51, 1);
+  color: #fff;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 1.1em;
+}
+
+@media screen and (width >= 900px) {
+  .Contact .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+Footer {
+  background: #000;
+  color: #fff;
+}
+Footer .container a {
+  text-decoration: none;
+  color: #fff;
+}
+Footer .container h2 {
+  font-size: 1.2em;
+  margin: 0 0 0.5em;
+}
+Footer .container ul {
+  list-style: none;
+}
+Footer .container ul li {
+  margin: 0 0 0.5em;
+}
+Footer .container div {
+  margin: 0 0 1em;
+}
+Footer .copyright {
+  text-align: center;
+  border-top: 1px solid grey;
+  padding: 1em 0;
+}
+
+@media screen and (width >= 900px) {
+  Footer .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }/*# sourceMappingURL=styles.css.map */
