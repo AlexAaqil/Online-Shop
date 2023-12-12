@@ -22,6 +22,7 @@
                 font-weight: 600;
                 padding-bottom: 20px;
             }
+
             a {
                 text-decoration: none;
                 color: white;
@@ -33,99 +34,98 @@
             }
         }
     }
-}
 
-.About {
-    h1 {
-        text-align: center;
-        font-weight: 600;
-    }
-    .about_content_wrapper {
-        .about-content {
-            text-align: center;
-            border: 1px solid black;
-            border-radius: 10px;
-            margin: 20px;
-            i {
-                font-size: 25px;
-                margin: 10px;
-            }
-            h3 {
-                font-weight: 600;
-                font-size: 30px;
-                margin: 10px;
-                color: chocolate;
-            }
-            p {
-                line-height: 25px;
-                font-family: "Times New Roman", Times, serif;
-                font-size: 25px;
-                margin: 10px;
+    .About {
+        .about_content_wrapper {
+            .about-content {
+                text-align: center;
+                border: 1px solid black;
+                border-radius: 10px;
+                margin: 20px;
+                i {
+                    font-size: 25px;
+                    margin: 10px;
+                }
+
+                h3 {
+                    margin: 10px;
+                    color: chocolate;
+                    font-size: 1.5em;
+                }
+
+                p {
+                    margin: 10px;
+                }
             }
         }
     }
-}
-.container {
-    h1 {
-        text-align: center;
-        font-weight: 600;
-    }
-    .instagram_content {
-        img {
-            height: 35vh;
-            background-position: center;
-            width: 100%;
-            margin: 10px;
-            border-radius: 10px;
+
+    .Instagram {
+        .container {
+            h1 {
+                text-align: center;
+            }
+
+            .instagram_content {
+                img {
+                    height: 35vh;
+                    background-position: center;
+                    width: 100%;
+                    margin: 10px;
+                    border-radius: 10px;
+                }
+            }
         }
     }
 }
 
 @media screen and (width >= 900px) {
-    .Homepage .Hero {
-        height: 90vh;
+    .Homepage {
+        .Hero {
+            height: 90vh;
 
-        .container {
-            h1 {
-                font-size: 90px;
-            }
-            a{
-                padding:20px 25px;
-                font-size: 20px;
-            }
-        }
-    }
-    .h1 {
-        font-size: 50px;
-    }
-    .About {
-        h1 {
-            font-size: 45px;
-        }
-        .about_content_wrapper {
-            display: flex;
+            .container {
+                h1 {
+                    font-size: 4.5em;
+                }
 
-            .about-content {
-                border: none;
-
-                i {
-                    font-size: 50px;
+                a {
+                    padding: 20px 25px;
+                    font-size: 1.2em;
                 }
             }
         }
-    }
-    .container {
-        h1{
-            font-weight: 600;
-            font-size: 45px;
+
+        .About {
+            .about_content_wrapper {
+                display: flex;
+
+                .about-content {
+                    border: none;
+
+                    i {
+                        font-size: 50px;
+                    }
+                }
+            }
         }
-        .instragm-content-wrapper {
-            display: flex;
-            .instagram_content {
-                img {
-                    height: 40vh;
-                    width: 95%;
-                    border-radius: 10px;
+
+        .Instagram {
+            .container {
+                h1 {
+                    font-size: 1.8em;
+                }
+
+                .instragm-content-wrapper {
+                    display: flex;
+
+                    .instagram_content {
+                        img {
+                            height: 40vh;
+                            width: 95%;
+                            border-radius: 10px;
+                        }
+                    }
                 }
             }
         }

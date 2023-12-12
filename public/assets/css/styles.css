@@ -61,39 +61,28 @@ nav .container ul {
   border-radius: 10px;
   cursor: pointer;
 }
-
-.About h1 {
-  text-align: center;
-  font-weight: 600;
-}
-.About .about_content_wrapper .about-content {
+.Homepage .About .about_content_wrapper .about-content {
   text-align: center;
   border: 1px solid black;
   border-radius: 10px;
   margin: 20px;
 }
-.About .about_content_wrapper .about-content i {
+.Homepage .About .about_content_wrapper .about-content i {
   font-size: 25px;
   margin: 10px;
 }
-.About .about_content_wrapper .about-content h3 {
-  font-weight: 600;
-  font-size: 30px;
+.Homepage .About .about_content_wrapper .about-content h3 {
   margin: 10px;
   color: chocolate;
+  font-size: 1.5em;
 }
-.About .about_content_wrapper .about-content p {
-  line-height: 25px;
-  font-family: "Times New Roman", Times, serif;
-  font-size: 25px;
+.Homepage .About .about_content_wrapper .about-content p {
   margin: 10px;
 }
-
-.container h1 {
+.Homepage .Instagram .container h1 {
   text-align: center;
-  font-weight: 600;
 }
-.container .instagram_content img {
+.Homepage .Instagram .container .instagram_content img {
   height: 35vh;
   background-position: center;
   width: 100%;
@@ -106,35 +95,28 @@ nav .container ul {
     height: 90vh;
   }
   .Homepage .Hero .container h1 {
-    font-size: 90px;
+    font-size: 4.5em;
   }
   .Homepage .Hero .container a {
     padding: 20px 25px;
-    font-size: 20px;
+    font-size: 1.2em;
   }
-  .h1 {
-    font-size: 50px;
-  }
-  .About h1 {
-    font-size: 45px;
-  }
-  .About .about_content_wrapper {
+  .Homepage .About .about_content_wrapper {
     display: flex;
   }
-  .About .about_content_wrapper .about-content {
+  .Homepage .About .about_content_wrapper .about-content {
     border: none;
   }
-  .About .about_content_wrapper .about-content i {
+  .Homepage .About .about_content_wrapper .about-content i {
     font-size: 50px;
   }
-  .container h1 {
-    font-weight: 600;
-    font-size: 45px;
+  .Homepage .Instagram .container h1 {
+    font-size: 1.8em;
   }
-  .container .instragm-content-wrapper {
+  .Homepage .Instagram .container .instragm-content-wrapper {
     display: flex;
   }
-  .container .instragm-content-wrapper .instagram_content img {
+  .Homepage .Instagram .container .instragm-content-wrapper .instagram_content img {
     height: 40vh;
     width: 95%;
     border-radius: 10px;

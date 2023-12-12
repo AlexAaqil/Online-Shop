@@ -15,11 +15,10 @@
     <!---About Section -->
     <section class="About">
         <div class="container">
-            <h1>About us</h1>
             <div class="about_content_wrapper">
                 <div class="about-content">
                     <i class="fas fa-desktop"></i>
-                    <h3>Browser</h3>
+                    <h3>Browse</h3>
                     <p>Choose your favorite product from our wide variety of available products.</p>
                 </div>
                 <div class="about-content">
