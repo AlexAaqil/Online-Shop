@@ -1,0 +1,27 @@
+nav {
+    position: fixed;
+    width: 100%;
+    background: #fff;
+
+    a{
+        text-decoration: none;
+        color: #000;
+        font-weight: bold;
+    }
+
+    .container,
+    ul {
+        display: flex;
+        align-items: center;
+    }
+
+    .container {
+        justify-content: space-between;
+
+        ul {
+            list-style: none;
+            justify-content: space-evenly;
+            gap: 0 2em;
+        }
+    }
+}
