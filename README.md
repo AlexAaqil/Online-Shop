@@ -1,0 +1,3 @@
+# ECommerce Platform
+
+Uses Laravel
