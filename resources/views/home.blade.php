@@ -1,7 +1,7 @@
 @extends('partials.base')
 
 @section('content')
-
+@include('partials.navbar')
 <main class="Homepage">
     <section class="Hero">
         <div class="container">
@@ -59,4 +59,5 @@
     </section>
 </main>
 
+@include('partials.footer')
 @endsection
