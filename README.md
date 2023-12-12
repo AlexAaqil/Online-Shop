@@ -12,4 +12,4 @@ Uses Laravel
 3. Generate the application key: \
     `php artisan key:generate`
 
-If you have installed Xampp, navigate to `xampp/php/php.ini` and edit the file to remove comment for `extension=zip`
+If you have installed Xampp, navigate to `xampp/php/php.ini` and edit the file to remove comment for `extension=zip` to avoid an error when running composer install.
