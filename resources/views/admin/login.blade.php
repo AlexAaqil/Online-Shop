@@ -5,7 +5,8 @@
     <div class="Login">
         <div class="container">
             <h1>Admin Login</h1>
-            <form action="" method="post">
+            <form action="{{ url('/admin') }}" method="post">
+                @csrf
                 <input type="email" name="email" id="email" placeholder="Email Adress" required autofocus />
                 <input type="password" name="password" id="password" placeholder="Password" required />
                 <button type="submit">Login</button>
