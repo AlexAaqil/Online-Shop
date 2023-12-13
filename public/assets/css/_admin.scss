@@ -42,3 +42,7 @@ $aside_width: 15%;
         margin-left: calc($aside_width + 0.5%);
     }
 }
+
+
+@import "admin_categories";
+@import "admin_products";
