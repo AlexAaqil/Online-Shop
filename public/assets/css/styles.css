@@ -263,4 +263,38 @@ Footer .copyright {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
   }
+}
+.Admin {
+  display: flex;
+}
+.Admin aside {
+  background: #000;
+  color: #fff;
+  width: 15%;
+  height: 100%;
+  position: fixed;
+}
+.Admin aside .header {
+  text-align: center;
+  margin: 0.5em 0 2em;
+}
+.Admin aside .body ul {
+  list-style: none;
+  padding: 0 0.8em 0;
+}
+.Admin aside .body ul li {
+  margin: 0 0 1em;
+  border-bottom: 1px solid rgb(68, 68, 68);
+  padding: 0.3em;
+}
+.Admin aside .body ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1em;
+  display: block;
+}
+.Admin .main_content {
+  width: 85%;
+  margin-left: 15.5%;
 }/*# sourceMappingURL=styles.css.map */

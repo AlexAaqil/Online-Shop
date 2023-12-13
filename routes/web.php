@@ -1,9 +1,12 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ShopController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,6 +22,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class,'index']);
+
+Route::get('/admin', [AdminController::class, 'index']);
+Route::get('/admin/categories', [CategoriesController::class,'index']);
+Route::get('/admin/products', [ProductController::class, 'index']);
 
 Route::get('/shop', [ShopController::class, 'index']);
 
