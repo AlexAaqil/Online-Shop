@@ -40,9 +40,71 @@ $aside_width: 15%;
     .main_content {
         width: calc(100% - $aside_width);
         margin-left: calc($aside_width + 0.5%);
+        padding: 0 0.5em;
+    }
+
+    .Dashboard {
+        .statistics {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0 2em;
+            padding: 1em 0;
+
+            .statistic {
+                display: grid;
+                grid-template-columns: 30% 70%;
+                gap: 0 0.5em;
+                background: #000;
+                color: #fff;
+                padding: 0.4em;
+
+                &:nth-of-type(1) {
+                    .icon {
+                        background: rgb(3, 93, 134);
+                    }
+                }
+
+                &:nth-of-type(2) {
+                    .icon {
+                        background: rgb(1, 78, 1);
+                    }
+                }
+
+                &:nth-of-type(3) {
+                    .icon {
+                        background: rgb(112, 112, 2);
+                    }
+                }
+
+                &:nth-of-type(4) {
+                    .icon {
+                        background: brown;
+                    }
+                }
+
+                .icon {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 8px;
+
+                    i {
+                        font-size: 2.2em;
+                    }
+                }
+
+                h1 {
+                    margin: 0 0 0.5em;
+                    font-size: 1.3em;
+                }
+
+                p {
+                    font-size: 1.1em;
+                }
+            }
+        }
     }
 }
-
 
 @import "admin_categories";
 @import "admin_products";
