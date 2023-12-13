@@ -26,8 +26,9 @@ Route::get('/', [HomeController::class,'index']);
 Route::match(['get', 'post'], '/admin', [AdminController::class, 'login'])->name('login');
 Route::middleware(['auth:admin'])->group(function () {
     Route::get('/admin/dashboard', [AdminController::class, 'index']);
-    Route::get('/admin/categories', [CategoriesController::class, 'index']);
+    Route::get('/admin/categories', [CategoriesController::class,'index']);
     Route::get('/admin/products', [ProductController::class, 'index']);
+    Route::get('/admin/logout', [AdminController::class, 'logout'])->name('logout');
 });
 
 Route::get('/shop', [ShopController::class, 'index']);

@@ -294,6 +294,19 @@ Footer .copyright {
   font-size: 1em;
   display: block;
 }
+.Admin aside .footer {
+  margin: 6em 0;
+  padding: 0.3em 1em;
+  text-align: center;
+}
+.Admin aside .footer .logout_btn {
+  color: tomato;
+  margin: 0.5em 0;
+}
+.Admin aside .footer .logout_btn a {
+  text-decoration: none;
+  color: tomato;
+}
 .Admin .main_content {
   width: 85%;
   margin-left: 15.5%;

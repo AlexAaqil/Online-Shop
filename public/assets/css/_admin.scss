@@ -35,6 +35,22 @@ $aside_width: 15%;
                 }
             }
         }
+
+        .footer {
+            margin: 6em 0;
+            padding: 0.3em 1em;
+            text-align: center;
+
+            .logout_btn {
+                color: tomato;
+                margin: 0.5em 0;
+
+                a {
+                    text-decoration: none;
+                    color: tomato;
+                }
+            }
+        }
     }
 
     .main_content {
