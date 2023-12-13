@@ -297,6 +297,54 @@ Footer .copyright {
 .Admin .main_content {
   width: 85%;
   margin-left: 15.5%;
+}
+
+.Categories {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 0 2em;
+  padding: 0.5em 0;
+}
+.Categories input {
+  font-size: 1em;
+  border-radius: 32px;
+  padding: 0.5em 1em;
+}
+.Categories .btn {
+  text-align: right;
+}
+.Categories .btn button {
+  background: #000;
+  color: #fff;
+  padding: 8px 32px;
+  font-weight: bold;
+  font-size: 1em;
+  border: none;
+  border-radius: 32px;
+}
+
+.Products {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 0 2em;
+  padding: 0.5em 0;
+}
+.Products input {
+  font-size: 1em;
+  border-radius: 32px;
+  padding: 0.5em 1em;
+}
+.Products .btn {
+  text-align: right;
+}
+.Products .btn button {
+  background: #000;
+  color: #fff;
+  padding: 8px 32px;
+  font-weight: bold;
+  font-size: 1em;
+  border: none;
+  border-radius: 32px;
   padding: 0 0.5em;
 }
 .Admin .Dashboard .statistics {
