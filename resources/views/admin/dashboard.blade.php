@@ -3,6 +3,7 @@
 @section('content')
 <main class="Admin">
     @include('admin.aside')
+
     <section class="main_content Dashboard">
         <h1>Dashboard</h1>
         <p>Welcome Back Admin</p>

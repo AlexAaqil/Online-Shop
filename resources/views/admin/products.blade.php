@@ -3,11 +3,14 @@
 @section('content')
 <main class="Admin">
     @include('admin.aside')
-    <section class="main_content Products">
-        <h1>Products</h1>
-        <input type="text" name="search" id="search" placeholder="Search" />
-        <div class="btn">
-            <button>Add New</button>
+
+    <section class="main_content Categories">
+        <div class="header">
+            <h1>Products</h1>
+            <input type="text" name="search" id="search" placeholder="Search" />
+            <div class="btn">
+                <button>Add New</button>
+            </div>
         </div>
     </section>
 </main>
