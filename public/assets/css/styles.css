@@ -297,4 +297,47 @@ Footer .copyright {
 .Admin .main_content {
   width: 85%;
   margin-left: 15.5%;
+  padding: 0 0.5em;
+}
+.Admin .Dashboard .statistics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0 2em;
+  padding: 1em 0;
+}
+.Admin .Dashboard .statistics .statistic {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  gap: 0 0.5em;
+  background: #000;
+  color: #fff;
+  padding: 0.4em;
+}
+.Admin .Dashboard .statistics .statistic:nth-of-type(1) .icon {
+  background: rgb(3, 93, 134);
+}
+.Admin .Dashboard .statistics .statistic:nth-of-type(2) .icon {
+  background: rgb(1, 78, 1);
+}
+.Admin .Dashboard .statistics .statistic:nth-of-type(3) .icon {
+  background: rgb(112, 112, 2);
+}
+.Admin .Dashboard .statistics .statistic:nth-of-type(4) .icon {
+  background: brown;
+}
+.Admin .Dashboard .statistics .statistic .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+}
+.Admin .Dashboard .statistics .statistic .icon i {
+  font-size: 2.2em;
+}
+.Admin .Dashboard .statistics .statistic h1 {
+  margin: 0 0 0.5em;
+  font-size: 1.3em;
+}
+.Admin .Dashboard .statistics .statistic p {
+  font-size: 1.1em;
 }/*# sourceMappingURL=styles.css.map */
