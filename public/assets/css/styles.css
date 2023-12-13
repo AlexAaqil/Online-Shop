@@ -364,27 +364,48 @@ Footer .copyright {
 .Admin .Dashboard .statistics .statistic p {
   font-size: 1.1em;
 }
-
-.Products {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 0 2em;
-  padding: 0.5em 0;
+.Admin .Login {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.Products input {
-  font-size: 1em;
-  border-radius: 32px;
+.Admin .Login .container {
+  width: 40vh;
+}
+.Admin .Login .container h1 {
+  font-size: 1.4em;
+  margin: 0 0 0.6em;
+  text-transform: uppercase;
+  text-align: center;
+}
+.Admin .Login .container form input {
+  width: 100%;
   padding: 0.5em 1em;
+  font-size: 1em;
+  border: 1px solid grey;
+  margin: 0 0 0.7em;
 }
-.Products .btn {
-  text-align: right;
-}
-.Products .btn button {
-  background: #000;
-  color: #fff;
-  padding: 8px 32px;
+.Admin .Login .container form button {
+  width: 100%;
+  padding: 10px 32px;
   font-weight: bold;
   font-size: 1em;
   border: none;
-  border-radius: 32px;
+  border-radius: 4px;
+  background: #000;
+  color: #fff;
+}
+.Admin .Login .container p {
+  margin: 1em 0;
+}
+
+@media screen and (width >= 900px) {
+  .Admin .Login .container {
+    padding: 15px;
+    width: 30%;
+    border: 1px solid rgb(218, 218, 218);
+    box-shadow: 1px 2px 8px black;
+  }
 }/*# sourceMappingURL=styles.css.map */

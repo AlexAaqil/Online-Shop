@@ -23,14 +23,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class,'index']);
 
-Route::get('/admin', [AdminController::class, 'index']);
-Route::get('/admin/categories', [CategoriesController::class,'index']);
-Route::get('/admin/products', [ProductController::class, 'index']);
+Route::get('/admin', [AdminController::class, 'login'])->name('login');
+Route::middleware(['auth:admin'])->group(function () {
+    Route::get('/admin/dashboard', [AdminController::class, 'index']);
+    Route::get('/admin/categories', [CategoriesController::class, 'index']);
+    Route::get('/admin/products', [ProductController::class, 'index']);
+});
 
 Route::get('/shop', [ShopController::class, 'index']);
-
 Route::get('/about', [AboutController::class, 'index']);
-
 Route::get('/contact', [ContactController::class, 'index']);
-
 Route::get('/cart', [CartController::class, 'index']);
