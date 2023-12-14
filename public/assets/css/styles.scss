@@ -9,6 +9,60 @@
     padding: 10px 5%;
 }
 
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5em 0;
+
+    thead {
+        background: #000;
+        color: #fff;
+
+        tr {
+            th {
+                text-align: left;
+                padding: 0.7em 0.4em;
+                font-size: 1.1em;
+
+                &:last-of-type {
+                    text-align: center;
+                    border-right: 0;
+                }
+            }
+        }
+    }
+
+    tbody {
+        tr {
+            td {
+                border-bottom: 1px solid rgb(228, 228, 228);
+                height: 50px;
+                padding: 0.5em 0.4em;
+
+                .actions {
+                    display: flex;
+                    gap: 0 2em;
+                    justify-content: center;
+
+                    .action {
+                        .fa-pencil-alt {
+                            color: green;
+                        }
+
+                        .fa-trash-alt {
+                            color: red;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    th,
+    td {
+        border-bottom: 1px solid grey;
+    }
+}
 
 @import "navbar";
 @import "home";
@@ -17,7 +71,6 @@
 @import "contact";
 @import "cart";
 @import "footer";
-
 
 @import "admin";
 @import "messages";

@@ -42,4 +42,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    static public function getAdmins() {
+        return self::select('users.*')
+        ->where('is_admin', '=', 1)
+        ->orderBy('id', 'desc')
+        ->get();
+    }
 }

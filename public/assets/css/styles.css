@@ -9,6 +9,45 @@
   padding: 10px 5%;
 }
 
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+}
+table thead {
+  background: #000;
+  color: #fff;
+}
+table thead tr th {
+  text-align: left;
+  padding: 0.7em 0.4em;
+  font-size: 1.1em;
+}
+table thead tr th:last-of-type {
+  text-align: center;
+  border-right: 0;
+}
+table tbody tr td {
+  border-bottom: 1px solid rgb(228, 228, 228);
+  height: 50px;
+  padding: 0.5em 0.4em;
+}
+table tbody tr td .actions {
+  display: flex;
+  gap: 0 2em;
+  justify-content: center;
+}
+table tbody tr td .actions .action .fa-pencil-alt {
+  color: green;
+}
+table tbody tr td .actions .action .fa-trash-alt {
+  color: red;
+}
+table th,
+table td {
+  border-bottom: 1px solid grey;
+}
+
 nav {
   position: sticky;
   top: 0;
@@ -291,8 +330,11 @@ Footer .copyright {
   text-decoration: none;
   color: #fff;
   font-weight: bold;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0 0.5em;
   font-size: 1em;
-  display: block;
 }
 .Admin aside .footer {
   margin: 6em 0;
@@ -337,17 +379,18 @@ Footer .copyright {
 }
 .Admin .Dashboard .statistics {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0 2em;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0 1.2em;
   padding: 1em 0;
 }
 .Admin .Dashboard .statistics .statistic {
   display: grid;
-  grid-template-columns: 30% 70%;
+  grid-template-columns: 1fr 2fr;
   gap: 0 0.5em;
   background: #000;
   color: #fff;
-  padding: 0.4em;
+  padding: 0.5em 0.7em;
+  border-radius: 8px;
 }
 .Admin .Dashboard .statistics .statistic:nth-of-type(1) .icon {
   background: rgb(3, 93, 134);
@@ -371,8 +414,9 @@ Footer .copyright {
   font-size: 2.2em;
 }
 .Admin .Dashboard .statistics .statistic h1 {
-  margin: 0 0 0.5em;
-  font-size: 1.3em;
+  margin: 0 0 0.3em;
+  font-size: 1.2em;
+  font-weight: 500;
 }
 .Admin .Dashboard .statistics .statistic p {
   font-size: 1.1em;

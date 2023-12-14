@@ -13,6 +13,16 @@
                     <i class="fas fa-users"></i>
                 </div>
                 <div class="text">
+                    <h1>Admins</h1>
+                    <p>20</p>
+                </div>
+            </div>
+
+            <div class="statistic">
+                <div class="icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="text">
                     <h1>Users</h1>
                     <p>20</p>
                 </div>
