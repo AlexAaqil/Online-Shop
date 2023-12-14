@@ -14,7 +14,7 @@
                 </div>
                 <div class="text">
                     <h1>Admins</h1>
-                    <p>20</p>
+                    <p>{{ $count_admins }}</p>
                 </div>
             </div>
 
