@@ -1,0 +1,424 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  padding: 10px 5%;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: #fff;
+  box-shadow: 1px 2px 8px black;
+}
+nav a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+}
+nav .container,
+nav ul {
+  display: flex;
+  align-items: center;
+}
+nav .container {
+  justify-content: space-between;
+}
+nav .container ul {
+  list-style: none;
+  justify-content: space-evenly;
+  gap: 0 2em;
+}
+
+.Homepage .Hero {
+  height: 50vh;
+  background: linear-gradient(120deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/shop.jpg);
+  width: 100%;
+  background-size: cover;
+  text-align: center;
+  background-position: center;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Homepage .Hero .container h1 {
+  font-size: 30px;
+  font-weight: 600;
+  padding-bottom: 20px;
+}
+.Homepage .Hero .container a {
+  text-decoration: none;
+  color: white;
+  background-color: chocolate;
+  font-size: 18px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.Homepage .About .about_content_wrapper .about-content {
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 20px;
+}
+.Homepage .About .about_content_wrapper .about-content i {
+  font-size: 25px;
+  margin: 10px;
+}
+.Homepage .About .about_content_wrapper .about-content h3 {
+  margin: 10px;
+  color: chocolate;
+  font-size: 1.5em;
+}
+.Homepage .About .about_content_wrapper .about-content p {
+  margin: 10px;
+}
+.Homepage .Instagram .container h1 {
+  text-align: center;
+}
+.Homepage .Instagram .container .instagram_content img {
+  height: 35vh;
+  background-position: center;
+  width: 100%;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+@media screen and (width >= 900px) {
+  .Homepage .Hero {
+    height: 90vh;
+  }
+  .Homepage .Hero .container h1 {
+    font-size: 4.5em;
+  }
+  .Homepage .Hero .container a {
+    padding: 20px 25px;
+    font-size: 1.2em;
+  }
+  .Homepage .About .about_content_wrapper {
+    display: flex;
+  }
+  .Homepage .About .about_content_wrapper .about-content {
+    border: none;
+  }
+  .Homepage .About .about_content_wrapper .about-content i {
+    font-size: 50px;
+  }
+  .Homepage .Instagram .container h1 {
+    font-size: 1.8em;
+  }
+  .Homepage .Instagram .container .instragm-content-wrapper {
+    display: flex;
+  }
+  .Homepage .Instagram .container .instragm-content-wrapper .instagram_content img {
+    height: 40vh;
+    width: 95%;
+    border-radius: 10px;
+  }
+}
+.About_Page .hero {
+  height: 20vh;
+  background: linear-gradient(120deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/founders.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.5em 0 2em;
+}
+.About_Page .hero h1 {
+  color: #fff;
+}
+.About_Page .container .story {
+  margin: 0 0 2em;
+}
+.About_Page .container h2 {
+  text-align: center;
+  margin: 0 0 0.5em;
+}
+.About_Page .container .team_members .member {
+  text-align: center;
+  margin: 0 0 2em;
+}
+.About_Page .container .team_members .member img {
+  width: 100%;
+  height: 350px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
+  border-radius: 16px;
+}
+.About_Page .container .team_members .member ul {
+  list-style: none;
+  margin: 0.5em 0;
+  display: flex;
+  justify-content: center;
+  gap: 0 2em;
+}
+.About_Page .container .team_members .member ul li a {
+  font-size: 1.5em;
+  color: #000;
+}
+.About_Page .container .team_members .member p {
+  font-size: bold;
+  font-size: 1.5em;
+}
+
+@media screen and (width >= 900px) {
+  .About_Page .hero {
+    height: 50vh;
+  }
+  .About_Page .hero h1 {
+    font-size: 3em;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  .About_Page .container .story {
+    margin: 0.5em 0 3em;
+  }
+  .About_Page .container .team_members {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .About_Page .container .team_members .member img {
+    width: 300px;
+  }
+}
+.Contact {
+  padding: 3em 0;
+}
+.Contact .container .contact_details h2 {
+  font-size: 1.5em;
+}
+.Contact .container .contact_details h3 {
+  font-size: 1em;
+}
+.Contact .container .contact_details div {
+  margin: 0 0 1em;
+}
+.Contact .container .contact_form form input,
+.Contact .container .contact_form form textarea {
+  width: 100%;
+  margin: 0 0 0.5em;
+  padding: 0.4em;
+  border: 1px solid grey;
+  border-radius: 8px;
+  font-size: 1em;
+}
+.Contact .container .contact_form form button {
+  background: rgb(1, 51, 1);
+  color: #fff;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 1.1em;
+}
+
+@media screen and (width >= 900px) {
+  .Contact .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+Footer {
+  background: #000;
+  color: #fff;
+}
+Footer .container h1 {
+  text-align: unset;
+}
+Footer .container a {
+  text-decoration: none;
+  color: #fff;
+}
+Footer .container h2 {
+  font-size: 1.2em;
+  margin: 0 0 0.5em;
+}
+Footer .container ul {
+  list-style: none;
+}
+Footer .container ul li {
+  margin: 0 0 0.5em;
+}
+Footer .container div {
+  margin: 0 0 1em;
+}
+Footer .copyright {
+  text-align: center;
+  border-top: 1px solid grey;
+  padding: 1em 0;
+}
+
+@media screen and (width >= 900px) {
+  Footer .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+.Admin {
+  display: flex;
+}
+.Admin aside {
+  background: #000;
+  color: #fff;
+  width: 15%;
+  height: 100%;
+  position: fixed;
+}
+.Admin aside .header {
+  text-align: center;
+  margin: 0.5em 0 2em;
+}
+.Admin aside .body ul {
+  list-style: none;
+  padding: 0 0.8em 0;
+}
+.Admin aside .body ul li {
+  margin: 0 0 1em;
+  border-bottom: 1px solid rgb(68, 68, 68);
+  padding: 0.3em;
+}
+.Admin aside .body ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1em;
+  display: block;
+}
+.Admin aside .footer {
+  margin: 6em 0;
+  padding: 0.3em 1em;
+  text-align: center;
+}
+.Admin aside .footer .logout_btn {
+  color: tomato;
+  margin: 0.5em 0;
+}
+.Admin aside .footer .logout_btn a {
+  text-decoration: none;
+  color: tomato;
+}
+.Admin .main_content {
+  width: 85%;
+  margin-left: 15.5%;
+  padding: 0 0.5em;
+}
+.Admin .main_content .header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 0 2em;
+  padding: 0.5em 0;
+}
+.Admin .main_content .header input {
+  font-size: 1em;
+  border-radius: 32px;
+  padding: 0.5em 1em;
+}
+.Admin .main_content .header .btn {
+  text-align: right;
+}
+.Admin .main_content .header .btn button {
+  background: #000;
+  color: #fff;
+  padding: 8px 32px;
+  font-weight: bold;
+  font-size: 1em;
+  border: none;
+  border-radius: 32px;
+}
+.Admin .Dashboard .statistics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0 2em;
+  padding: 1em 0;
+}
+.Admin .Dashboard .statistics .statistic {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  gap: 0 0.5em;
+  background: #000;
+  color: #fff;
+  padding: 0.4em;
+}
+.Admin .Dashboard .statistics .statistic:nth-of-type(1) .icon {
+  background: rgb(3, 93, 134);
+}
+.Admin .Dashboard .statistics .statistic:nth-of-type(2) .icon {
+  background: rgb(1, 78, 1);
+}
+.Admin .Dashboard .statistics .statistic:nth-of-type(3) .icon {
+  background: rgb(112, 112, 2);
+}
+.Admin .Dashboard .statistics .statistic:nth-of-type(4) .icon {
+  background: brown;
+}
+.Admin .Dashboard .statistics .statistic .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+}
+.Admin .Dashboard .statistics .statistic .icon i {
+  font-size: 2.2em;
+}
+.Admin .Dashboard .statistics .statistic h1 {
+  margin: 0 0 0.5em;
+  font-size: 1.3em;
+}
+.Admin .Dashboard .statistics .statistic p {
+  font-size: 1.1em;
+}
+.Admin .Login {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Admin .Login .container {
+  width: 40vh;
+}
+.Admin .Login .container h1 {
+  font-size: 1.4em;
+  margin: 0 0 0.6em;
+  text-transform: uppercase;
+  text-align: center;
+}
+.Admin .Login .container form input {
+  width: 100%;
+  padding: 0.5em 1em;
+  font-size: 1em;
+  border: 1px solid grey;
+  margin: 0 0 0.7em;
+}
+.Admin .Login .container form button {
+  width: 100%;
+  padding: 10px 32px;
+  font-weight: bold;
+  font-size: 1em;
+  border: none;
+  border-radius: 4px;
+  background: #000;
+  color: #fff;
+}
+.Admin .Login .container p {
+  margin: 1em 0;
+}
+
+@media screen and (width >= 900px) {
+  .Admin .Login .container {
+    padding: 15px;
+    width: 30%;
+    border: 1px solid rgb(218, 218, 218);
+    box-shadow: 1px 2px 8px black;
+  }
+}/*# sourceMappingURL=styles.css.map */

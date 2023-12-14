@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
+use \App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class,'index'])->name('home');
+Route::get('/about', [HomeController::class,'about'])->name('about');
+Route::get('/contact', [HomeController::class,'contact'])->name('contact');
+
+
+Route::get('/admin', [AdminController::class,'index'])->name('login');
+Route::get('/admin/dashboard', [AdminController::class,'dashboard'])->name('admin_dashboard');
+Route::get('/admin/categories', [AdminController::class,'categories'])->name('admin_categories');
+Route::get('/admin/products', [AdminController::class,'products'])->name('admin_products');
