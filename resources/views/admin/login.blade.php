@@ -5,8 +5,8 @@
     <div class="Login">
         <div class="container">
             <h1>Admin Login</h1>
-            @include('partials.notifications')
-            <form action="{{ url('/admin') }}" method="post">
+            @include('partials.messages')
+            <form action="" method="post">
                 @csrf
                 <input type="email" name="email" id="email" placeholder="Email Adress" autofocus />
                 <input type="password" name="password" id="password" placeholder="Password" />

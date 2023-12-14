@@ -13,6 +13,6 @@
 
     <div class="footer">
         <p>Admin</p>
-        <p class="logout_btn"><i class="fas fa-sign-out-alt"></i> <a href="{{ url('/admin/logout') }}">Logout</a></p>
+        <p class="logout_btn"><i class="fas fa-sign-out-alt"></i> <a href="{{ route('admin_logout') }}">Logout</a></p>
     </div>
 </aside>
