@@ -18,3 +18,10 @@ function searchFunction() {
         }
     }
 }
+
+
+function deleteAdmin() {
+    if (confirm("Are you sure you want to delete this admin?")) {
+        document.getElementById("deleteForm").submit();
+    }
+}

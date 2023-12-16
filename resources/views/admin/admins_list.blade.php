@@ -9,7 +9,7 @@
             <h1>Admins</h1>
             <input type="text" name="search" id="myInput" placeholder="Search" onkeyup="searchFunction()" />
             <div class="btn">
-                <button><a href="{{ route('add_admin_form') }}">Add New</a></button>
+                <button><a href="{{ route('get_add_admin') }}">Add New</a></button>
             </div>
         </div>
 
@@ -40,7 +40,13 @@
                                     </div>
 
                                     <div class="action">
-                                        <a href="{{ url('/admin/delete/'.$admin->id) }}"><i class="fas fa-trash-alt"></i></a>
+                                        <form id="deleteForm" action="{{ route('delete_admin', ['id' => $admin->id]) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <a href="javascript:void(0);" onclick="deleteAdmin();">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </a>
+                                        </form>
                                     </div>
                                 </div>
                             </td>
@@ -53,4 +59,4 @@
     </section>
 </main>
 @endsection
-<script src="{{ asset('/assets/js/search.js') }}"></script>
+<script src="{{ asset('/assets/js/my_js.js') }}"></script>

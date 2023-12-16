@@ -11,6 +11,7 @@
             </div>
             <div class="body">
                 <form action="" method="post">
+                    @csrf
                     <div class="input_group">
                         <label for="first_name">First Name</label>
                         <input type="text" name="first_name" id="first_name" value="{{ $admin->first_name }}" required />
@@ -29,6 +30,11 @@
                     <div class="input_group">
                         <label for="phone_number">Phone Number</label>
                         <input type="text" name="phone_number" id="phone_number" value="{{ $admin->phone_number }}" required />
+                    </div>
+
+                    <div class="input_group">
+                        <label for="password">Password</label>
+                        <input type="text" name="password" id="password" placeholder="Enter a new password or leave blank to use the same password" />
                     </div>
 
                     <div class="input_group">
