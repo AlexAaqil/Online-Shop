@@ -513,6 +513,7 @@ Footer .copyright {
      -moz-appearance: none;
           appearance: none;
   width: auto;
+  border: unset;
 }
 .Admin .customized_form form .input_group .custom_radio_buttons label .option_radio:before {
   transition: transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75);
