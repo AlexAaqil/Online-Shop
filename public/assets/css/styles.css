@@ -494,8 +494,6 @@ Footer .copyright {
 }
 .Admin .customized_form form .input_group .custom_radio_buttons {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 .Admin .customized_form form .input_group .custom_radio_buttons label {
   padding: 0.3em 0.2em;
@@ -507,7 +505,7 @@ Footer .copyright {
 }
 .Admin .customized_form form .input_group .custom_radio_buttons label .option_radio {
   position: relative;
-  margin: 0 0.5em 0 0;
+  margin: 0 0.1em 0 0;
   cursor: pointer;
   -webkit-appearance: none;
      -moz-appearance: none;
