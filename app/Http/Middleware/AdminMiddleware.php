@@ -17,12 +17,12 @@ class AdminMiddleware
     public function handle(Request $request, Closure $next): Response
     {
         if(!empty(Auth::check())) {
-            if(Auth::user()->is_admin == 1) {
+            if(Auth::user()->is_admin == 1 && Auth::user()->status == 1) {
                 return $next($request);
             }
             else {
                 Auth::logout();
-                return redirect('admin');
+                return redirect('admin')->with('warning', "Your account is inactive. Contact the Admin!");
             }
         }
         else {

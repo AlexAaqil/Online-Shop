@@ -1,3 +1,7 @@
+$danger: rgb(235, 4, 4);
+$success: rgb(2, 168, 29);
+$warning: rgb(194, 128, 5);
+
 .alert {
     padding: 0.5em 0;
     margin: 0.1em 0;
@@ -9,11 +13,21 @@
 }
 
 .alert-danger {
-    background: rgb(235, 4, 4);
+    background: $danger;
 }
 
 .alert-success {
-    background: rgb(2, 168, 29);
+    background: $success;
+}
+
+.alert-warning {
+    background: $warning;
+}
+
+.inline_alert {
+    margin: 0.1em 0 0;
+    font-weight: bold;
+    color: $danger;
 }
 
 

@@ -22,6 +22,10 @@ class AdminController extends Controller
     }
 
     public function post_add_admin(Request $request) {
+        request()->validate([
+            'email' => 'required|email|unique:users'
+        ]);
+
         $admin = new User;
         $admin->first_name = $request->first_name;
         $admin->last_name = $request->last_name;
@@ -41,12 +45,15 @@ class AdminController extends Controller
     }
 
     public function post_update_admin($id, Request $request) {
+        request()->validate([
+            'email' => 'required|email|unique:users,email,'.$id,
+        ]);
+
         $admin = User::find($id);
         $admin->first_name = $request->first_name;
         $admin->last_name = $request->last_name;
         $admin->email = $request->email;
         $admin->phone_number = $request->phone_number;
-        $admin->is_admin = $request->is_admin;
         $admin->status = $request->status;
         if(!empty($request->password)){
             $admin->password = Hash::make($request->password);

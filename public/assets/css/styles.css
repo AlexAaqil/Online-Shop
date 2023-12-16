@@ -564,4 +564,14 @@ Footer .copyright {
 
 .alert-success {
   background: rgb(2, 168, 29);
+}
+
+.alert-warning {
+  background: rgb(194, 128, 5);
+}
+
+.inline_alert {
+  margin: 0.1em 0 0;
+  font-weight: bold;
+  color: rgb(235, 4, 4);
 }/*# sourceMappingURL=styles.css.map */
