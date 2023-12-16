@@ -20,8 +20,37 @@ function searchFunction() {
 }
 
 
+// function deleteAdmin() {
+//     if (confirm("Are you sure you want to delete this admin?")) {
+//         document.getElementById("deleteForm").submit();
+//     }
+// }
+
+
+function showConfirmationDialog(message, onConfirm) {
+    Swal.fire({
+        title: "Are you sure?",
+        text: message,
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, proceed!",
+    }).then((result) => {
+        if (result.isConfirmed) {
+            onConfirm();
+        }
+    });
+}
+
 function deleteAdmin() {
-    if (confirm("Are you sure you want to delete this admin?")) {
+    const message = "You'll delete this admin permanently!";
+
+    // Callback function to handle deletion
+    function confirmDelete() {
         document.getElementById("deleteForm").submit();
     }
+
+    // Show the confirmation dialog with the specified message and callback function
+    showConfirmationDialog(message, confirmDelete);
 }

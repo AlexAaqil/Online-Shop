@@ -43,6 +43,7 @@
                                         <form id="deleteForm" action="{{ route('delete_admin', ['id' => $admin->id]) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
+
                                             <a href="javascript:void(0);" onclick="deleteAdmin();">
                                                 <i class="fas fa-trash-alt"></i>
                                             </a>
@@ -59,4 +60,5 @@
     </section>
 </main>
 @endsection
+<script src="{{ asset('/assets/js/sweetalert.js') }}"></script>
 <script src="{{ asset('/assets/js/my_js.js') }}"></script>
