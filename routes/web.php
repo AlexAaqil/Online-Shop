@@ -25,7 +25,13 @@ Route::get('/admin', [AuthController::class,'admin_login'])->name('admin_login')
 Route::post('/admin', [AuthController::class,'admin_auth_login'])->name('admin_auth_login');
 Route::group(['middleware' => 'admin'], function() {
     Route::get('/admin/dashboard', [AdminController::class,'dashboard'])->name('admin_dashboard');
-    Route::get('/admin/admins/list', [AdminController::class,'list_admins'])->name('list_admins');
+
+    Route::get('/admin/list', [AdminController::class,'list_admins'])->name('list_admins');
+    Route::get('/admin/add', [AdminController::class,'add_admin_form'])->name('add_admin_form');
+    Route::post('/admin/add', [AdminController::class,'add_admin'])->name('add_admin');
+    Route::get('/admin/update/{id}', [AdminController::class,'get_update_admin'])->name('get_update_admin');
+    Route::post('/admin/update/{id}', [AdminController::class,'post_update_admin'])->name('post_update_admin');
+
     Route::get('/admin/categories', [AdminController::class,'categories'])->name('admin_categories');
     Route::get('/admin/products', [AdminController::class,'products'])->name('admin_products');
     Route::get('/admin/logout', [AuthController::class,'admin_logout'])->name('admin_logout');

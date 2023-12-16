@@ -12,7 +12,7 @@
 table {
   width: 100%;
   border-collapse: collapse;
-  margin: 1.5em 0;
+  margin: 0 0 1.5em;
 }
 table thead {
   background: #000;
@@ -306,6 +306,21 @@ Footer .copyright {
 .Admin {
   display: flex;
 }
+.Admin form input {
+  width: 100%;
+  font-size: 1em;
+  border: 1px solid grey;
+  border-radius: 4px;
+}
+.Admin form button {
+  padding: 10px 32px;
+  font-weight: bold;
+  font-size: 1em;
+  border: none;
+  border-radius: 4px;
+  background: #000;
+  color: #fff;
+}
 .Admin aside {
   background: #000;
   color: #fff;
@@ -316,6 +331,9 @@ Footer .copyright {
 .Admin aside .header {
   text-align: center;
   margin: 0.5em 0 2em;
+}
+.Admin aside .header h1 {
+  font-size: 1.3em;
 }
 .Admin aside .body ul {
   list-style: none;
@@ -334,7 +352,7 @@ Footer .copyright {
   display: flex;
   align-items: center;
   gap: 0 0.5em;
-  font-size: 1em;
+  font-size: 0.95em;
 }
 .Admin aside .footer {
   margin: 6em 0;
@@ -370,12 +388,16 @@ Footer .copyright {
 }
 .Admin .main_content .header .btn button {
   background: #000;
-  color: #fff;
   padding: 8px 32px;
   font-weight: bold;
   font-size: 1em;
   border: none;
   border-radius: 32px;
+}
+.Admin .main_content .header .btn button a {
+  width: 100%;
+  color: #fff;
+  text-decoration: none;
 }
 .Admin .Dashboard .statistics {
   display: grid;
@@ -438,24 +460,86 @@ Footer .copyright {
   text-align: center;
 }
 .Admin .Login .container form input {
-  width: 100%;
   padding: 0.5em 1em;
-  font-size: 1em;
-  border: 1px solid grey;
   margin: 0 0 0.7em;
 }
 .Admin .Login .container form button {
   width: 100%;
-  padding: 10px 32px;
-  font-weight: bold;
-  font-size: 1em;
-  border: none;
-  border-radius: 4px;
-  background: #000;
-  color: #fff;
 }
 .Admin .Login .container p {
   margin: 1em 0;
+}
+.Admin .customized_form {
+  width: 60%;
+  margin: 1em auto;
+}
+.Admin .customized_form .form_title {
+  text-align: center;
+  padding: 0.5em 0;
+  background: rgb(0, 0, 0);
+  color: #fff;
+}
+.Admin .customized_form .form_title h1 {
+  font-size: 1em;
+}
+.Admin .customized_form form .input_group {
+  padding: 0.3em 0;
+}
+.Admin .customized_form form .input_group label {
+  font-weight: 550;
+}
+.Admin .customized_form form .input_group input {
+  padding: 0.4em 0.6em;
+  width: 100%;
+}
+.Admin .customized_form form .input_group .custom_radio_buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.Admin .customized_form form .input_group .custom_radio_buttons label {
+  padding: 0.3em 0.2em;
+  position: relative;
+  cursor: pointer;
+  width: 30%;
+  display: flex;
+  align-items: center;
+}
+.Admin .customized_form form .input_group .custom_radio_buttons label .option_radio {
+  position: relative;
+  margin: 0 0.5em 0 0;
+  cursor: pointer;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: auto;
+}
+.Admin .customized_form form .input_group .custom_radio_buttons label .option_radio:before {
+  transition: transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75);
+  transform: scale(0, 0);
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0.125rem;
+  z-index: 1;
+  width: 0.75rem;
+  height: 0.75rem;
+  background: #16a085;
+  border-radius: 50%;
+}
+.Admin .customized_form form .input_group .custom_radio_buttons label .option_radio:checked:before {
+  transform: scale(1, 1);
+}
+.Admin .customized_form form .input_group .custom_radio_buttons label .option_radio:after {
+  content: "";
+  position: absolute;
+  top: -0.25rem;
+  left: -0.125rem;
+  width: 1rem;
+  height: 1rem;
+  background: #fff;
+  border: 2px solid #d6d6d6;
+  border-radius: 50%;
 }
 
 @media screen and (width >= 900px) {
@@ -468,7 +552,7 @@ Footer .copyright {
 }
 .alert {
   padding: 0.5em 0;
-  margin: 0.2em 0;
+  margin: 0.1em 0;
   text-align: center;
   border-radius: 4px;
   color: #fff;
@@ -477,4 +561,8 @@ Footer .copyright {
 
 .alert-danger {
   background: rgb(235, 4, 4);
+}
+
+.alert-success {
+  background: rgb(2, 168, 29);
 }/*# sourceMappingURL=styles.css.map */

@@ -1,6 +1,6 @@
 .alert {
     padding: 0.5em 0;
-    margin: 0.2em 0;
+    margin: 0.1em 0;
     text-align: center;
     border-radius: 4px;
     color: #fff;
@@ -10,6 +10,10 @@
 
 .alert-danger {
     background: rgb(235, 4, 4);
+}
+
+.alert-success {
+    background: rgb(2, 168, 29);
 }
 
 
