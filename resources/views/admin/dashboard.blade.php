@@ -6,7 +6,7 @@
 
     <section class="main_content Dashboard">
         <h1>Dashboard</h1>
-        <p>Welcome Back Admin</p>
+        <p>Welcome Back {{ Auth::user()->first_name }}</p>
         <div class="statistics">
             <div class="statistic">
                 <div class="icon">

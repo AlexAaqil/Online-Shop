@@ -9,11 +9,13 @@
             <h1>Admins</h1>
             <input type="text" name="search" id="myInput" placeholder="Search" onkeyup="searchFunction()" />
             <div class="btn">
-                <button>Add New</button>
+                <button><a href="{{ route('add_admin_form') }}">Add New</a></button>
             </div>
         </div>
 
         <div class="body">
+            @include('partials.messages')
+
             <div class="table">
                 <table>
                     <thead>
@@ -34,11 +36,11 @@
                             <td>
                                 <div class="actions">
                                     <div class="action">
-                                        <i class="fas fa-pencil-alt"></i>
+                                        <a href="{{ url('/admin/update/'.$admin->id) }}"><i class="fas fa-pencil-alt"></i></a>
                                     </div>
 
                                     <div class="action">
-                                        <i class="fas fa-trash-alt"></i>
+                                        <a href="{{ url('/admin/delete/'.$admin->id) }}"><i class="fas fa-trash-alt"></i></a>
                                     </div>
                                 </div>
                             </td>

@@ -13,7 +13,7 @@
     </div>
 
     <div class="footer">
-        <p>Admin</p>
+        <p>{{ Auth::user()->first_name }}</p>
         <p class="logout_btn"><i class="fas fa-sign-out-alt"></i> <a href="{{ route('admin_logout') }}">Logout</a></p>
     </div>
 </aside>
