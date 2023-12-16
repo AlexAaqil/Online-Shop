@@ -13,6 +13,9 @@
     </div>
 
     <div class="footer">
+        <div class="image">
+            <img src="{{ asset('/assets/images/default_profile.png') }}" alt="{{Auth::user()->first_name}}'s profile image">
+        </div>
         <p>{{ Auth::user()->first_name }}</p>
         <p class="logout_btn"><i class="fas fa-sign-out-alt"></i> <a href="{{ route('admin_logout') }}">Logout</a></p>
     </div>

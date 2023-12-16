@@ -359,6 +359,17 @@ Footer .copyright {
   padding: 0.3em 1em;
   text-align: center;
 }
+.Admin aside .footer .image {
+  margin: 0 0 0.5em;
+}
+.Admin aside .footer .image img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid #6b6b6b;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
 .Admin aside .footer .logout_btn {
   color: tomato;
   margin: 0.5em 0;
@@ -388,6 +399,7 @@ Footer .copyright {
 }
 .Admin .main_content .header .btn button {
   background: #000;
+  color: #fff;
   padding: 8px 32px;
   font-weight: bold;
   font-size: 1em;

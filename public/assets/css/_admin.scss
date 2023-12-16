@@ -67,6 +67,19 @@ $aside_width: 15%;
             padding: 0.3em 1em;
             text-align: center;
 
+            .image {
+                margin: 0 0 0.5em;
+
+                img {
+                    $image_size: 60px;
+                    width: $image_size;
+                    height: $image_size;
+                    border-radius: 50%;
+                    border: 2px solid #6b6b6b;
+                    object-fit: contain;
+                }
+            }
+
             .logout_btn {
                 color: tomato;
                 margin: 0.5em 0;
@@ -101,6 +114,7 @@ $aside_width: 15%;
 
                 button {
                     background: #000;
+                    color: #fff;
                     padding: 8px 32px;
                     font-weight: bold;
                     font-size: 1em;
