@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\HomeController;
 use \App\Http\Controllers\AuthController;
@@ -33,7 +34,10 @@ Route::group(['middleware' => 'admin'], function() {
     Route::post('/admin/update/{id}', [AdminController::class,'post_update_admin'])->name('post_update_admin');
     Route::delete('/admin/delete/{id}', [AdminController::class,'delete_admin'])->name('delete_admin');
 
-    Route::get('/admin/categories', [AdminController::class,'categories'])->name('admin_categories');
+    Route::get('/admin/categories', [CategoryController::class, 'list_categories'])->name('list_categories');
+    Route::get('/admin/categories/add', [CategoryController::class, 'get_add_category'])->name('post_add_category');
+    Route::post('/admin/categories/add', [CategoryController::class, 'post_add_category'])->name('post_add_category');
+
     Route::get('/admin/products', [AdminController::class,'products'])->name('admin_products');
     Route::get('/admin/logout', [AuthController::class,'admin_logout'])->name('admin_logout');
 });
