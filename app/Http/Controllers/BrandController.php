@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 use App\Models\Brand;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 
 class BrandController extends Controller
 {
@@ -18,12 +17,11 @@ class BrandController extends Controller
 
     public function post_add_brand(Request $request) {
         request()->validate([
-            'title'=> 'required|unique:categories',
+            'title'=> 'required|unique:brands',
         ]);
 
         $brand = new Brand;
         $brand->title = $request->title;
-        $brand->slug = Str::slug( $request->title);
         $brand->save();
 
         return redirect()->route('list_brands')->with('success', "Brand was added successfully");
@@ -36,18 +34,17 @@ class BrandController extends Controller
 
     public function post_update_brand($id, Request $request) {
         request()->validate([
-            'title' => 'required|unique:categories,title,'.$id,
+            'title' => 'required|unique:brands,title,'.$id,
         ]);
 
         $brand = Brand::find($id);
         $brand->title = $request->title;
-        $brand->slug = Str::slug( $request->title );
         $brand->save();
 
         return redirect()->route('list_brands')->with('success', "Brand was updated successfully");
     }
 
-    public function delete_category($id) {
+    public function delete_brand($id) {
         $brand = Brand::find($id);
         $brand->delete();
 

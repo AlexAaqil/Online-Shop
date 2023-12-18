@@ -14,7 +14,7 @@
                     @csrf
                     <div class="input_group">
                         <label for="title">Title</label>
-                        <input type="text" name="title" id="title" value="{{ old('title', $category->title) }}" required />
+                        <input type="text" name="title" id="title" value="{{ old('title', $brand->title) }}" required />
                         <span class="inline_alert">{{ $errors->first('title') }}</span>
                     </div>
 
