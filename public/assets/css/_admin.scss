@@ -60,6 +60,10 @@ $aside_width: 15%;
                         align-items: center;
                         gap: 0 0.5em;
                         font-size: 0.95em;
+
+                        i {
+                            width: 10%;
+                        }
                     }
                 }
             }

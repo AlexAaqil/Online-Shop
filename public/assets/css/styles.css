@@ -357,6 +357,9 @@ Footer .copyright {
   gap: 0 0.5em;
   font-size: 0.95em;
 }
+.Admin aside .body ul li a i {
+  width: 10%;
+}
 .Admin aside .footer {
   margin: 6em 0;
   padding: 0.3em 1em;
