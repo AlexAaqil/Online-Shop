@@ -1,11 +1,14 @@
 <?php
 
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\DashboardController;
-use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\HomeController;
 use \App\Http\Controllers\AuthController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\BrandController;
+use App\Http\Controllers\ProductController;
+use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +45,19 @@ Route::group(['middleware' => 'admin'], function() {
     Route::post('/admin/categories/update/{id}', [CategoryController::class, 'post_update_category'])->name('post_update_category');
     Route::delete('/admin/categories/delete{id}', [CategoryController::class, 'delete_category'])->name('delete_category');
 
-    Route::get('/admin/products', [AdminController::class,'products'])->name('admin_products');
+    Route::get('/admin/brands', [BrandController::class, 'list_brands'])->name('list_brands');
+    Route::get('/admin/brands/add', [BrandController::class, 'get_add_brand'])->name('get_add_brand');
+    Route::post('/admin/brands/add', [BrandController::class, 'post_add_brand'])->name('post_add_brand');
+    Route::get('/admin/brands/update/{id}', [BrandController::class, 'get_update_brand'])->name('get_update_brand');
+    Route::post('/admin/brands/update/{id}', [BrandController::class, 'post_update_brand'])->name('post_update_brand');
+    Route::delete('/admin/brands/delete{id}', [BrandController::class, 'delete_brand'])->name('delete_brand');
+
+    Route::get('/admin/products', [ProductController::class, 'list_products'])->name('list_products');
+    Route::get('/admin/products/add', [ProductController::class, 'get_add_product'])->name('get_add_product');
+    Route::post('/admin/products/add', [ProductController::class, 'post_add_product'])->name('post_add_product');
+    Route::get('/admin/products/update/{id}', [ProductController::class, 'get_update_product'])->name('get_update_product');
+    Route::post('/admin/products/update/{id}', [ProductController::class, 'post_update_product'])->name('post_update_product');
+    Route::delete('/admin/products/delete{id}', [ProductController::class, 'delete_product'])->name('delete_product');
+
     Route::get('/admin/logout', [AuthController::class,'admin_logout'])->name('admin_logout');
 });
