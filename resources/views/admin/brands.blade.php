@@ -6,7 +6,7 @@
 
     <section class="main_content">
         <div class="header">
-            <h1>Products</h1>
+            <h1>Categories</h1>
             <input type="text" name="search" id="myInput" placeholder="Search" onkeyup="searchFunction()" />
             <div class="btn">
                 <button><a href="{{ route('get_add_category') }}">Add New</a></button>
@@ -22,16 +22,12 @@
                         <tr>
                             <th>Title</th>
                             <th>Slug</th>
-                            <th>Price</th>
-                            <th>Category</th>
-                            <th>Brand</th>
-                            <th>Created by</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
 
                     <tbody>
-                      
+                       
                     </tbody>
                 </table>
             </div>
