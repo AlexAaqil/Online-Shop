@@ -2,23 +2,28 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use App\Models\Category;
+use App\Models\Brand;
 use App\Models\Product;
 use Illuminate\Support\Str;
+use Auth;
 
 class ProductController extends Controller
 {
     public function list_products() {
-        $products = Product::all();
+        $products = Product::with('category', 'brand', 'createdBy')->get();
         return view("admin/products", compact("products"));
     }
 
     public function get_add_product() {
-        return view("admin/add_product");
+        $categories = Category::all();
+        $brands = Brand::all();
+        return view("admin/add_product", compact('categories', 'brands'));
     }
 
     public function post_add_product(Request $request) {
         request()->validate([
-            'title'=> 'required|unique:categories',
+            'title'=> 'required|unique:products',
         ]);
 
         $product = new Product;
@@ -32,7 +37,7 @@ class ProductController extends Controller
         $product->new_price = $request->new_price;
         $product->category_id = $request->category_id;
         $product->brand_id = $request->brand_id;
-        $product->created_by = $request->created_by;
+        $product->created_by = Auth::user()->id;
 
         $product->save();
 
@@ -41,7 +46,9 @@ class ProductController extends Controller
 
     public function get_update_product($id) {
         $product = Product::find($id);
-        return view("admin/update_product", compact('product'));
+        $categories = Category::all();
+        $brands = Brand::all();
+        return view("admin/update_product", compact('product', 'categories', 'brands'));
     }
 
     public function post_update_product($id, Request $request) {
@@ -60,7 +67,6 @@ class ProductController extends Controller
         $product->new_price = $request->new_price;
         $product->category_id = $request->category_id;
         $product->brand_id = $request->brand_id;
-        $product->created_by = $request->created_by;
 
         $product->save();
 

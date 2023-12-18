@@ -307,6 +307,7 @@ Footer .copyright {
   display: flex;
 }
 .Admin form input,
+.Admin form select,
 .Admin form textarea {
   width: 100%;
   padding: 0.4em 0.6em;
@@ -484,7 +485,7 @@ Footer .copyright {
   margin: 1em 0;
 }
 .Admin .customized_form {
-  width: 60%;
+  width: 70%;
   margin: 1em auto;
 }
 .Admin .customized_form .form_title {
@@ -496,11 +497,22 @@ Footer .copyright {
 .Admin .customized_form .form_title h1 {
   font-size: 1em;
 }
+.Admin .customized_form form .input_group_row {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 0 1em;
+}
+.Admin .customized_form form .input_group_row .input_group {
+  width: 100%;
+}
 .Admin .customized_form form .input_group {
   padding: 0.3em 0;
 }
 .Admin .customized_form form .input_group label {
   font-weight: 550;
+}
+.Admin .customized_form form .input_group label span {
+  color: red;
 }
 .Admin .customized_form form .input_group .custom_radio_buttons {
   display: flex;

@@ -9,7 +9,7 @@
             <h1>Products</h1>
             <input type="text" name="search" id="myInput" placeholder="Search" onkeyup="searchFunction()" />
             <div class="btn">
-                <button><a href="{{ route('get_add_category') }}">Add New</a></button>
+                <button><a href="{{ route('get_add_product') }}">Add New</a></button>
             </div>
         </div>
 
@@ -31,7 +31,34 @@
                     </thead>
 
                     <tbody>
-                      
+                        @foreach($products as $product)
+                            <tr>
+                                <td>{{ $product->title }}</td>
+                                <td>{{ $product->slug }}</td>
+                                <td>{{ $product->price }}</td>
+                                <td>{{ $product->category->title }}</td>
+                                <td>{{ $product->brand->title }}</td>
+                                <td>{{ $product->createdBy->first_name }} {{ $product->createdBy->last_name }}</td>
+                                <td>
+                                    <div class="actions">
+                                        <div class="action">
+                                            <a href="{{ url('/admin/products/update/'.$product->id) }}"><i class="fas fa-pencil-alt"></i></a>
+                                        </div>
+
+                                        <div class="action">
+                                            <form id="deleteForm_{{ $product->id }}" action="{{ route('delete_product', ['id' => $product->id]) }}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+
+                                                <a href="javascript:void(0);" onclick="deleteItem({{ $product->id }}, 'product');">
+                                                    <i class="fas fa-trash-alt"></i>
+                                                </a>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

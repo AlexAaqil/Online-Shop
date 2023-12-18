@@ -5,6 +5,7 @@ $aside_width: 15%;
 
     form {
         input,
+        select,
         textarea {
             width: 100%;
             padding: 0.4em 0.6em;
@@ -232,7 +233,7 @@ $aside_width: 15%;
     }
 
     .customized_form {
-        width: 60%;
+        width: 70%;
         margin: 1em auto;
 
         .form_title {
@@ -247,11 +248,25 @@ $aside_width: 15%;
         }
 
         form {
+            .input_group_row {
+                display: flex;
+                justify-content: space-evenly;
+                gap: 0 1em;
+
+                .input_group {
+                    width: 100%;
+                }
+            }
+
             .input_group {
                 padding: 0.3em 0;
 
                 label {
                     font-weight: 550;
+
+                    span {
+                        color: red;
+                    }
                 }
 
                 .custom_radio_buttons {
