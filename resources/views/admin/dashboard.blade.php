@@ -24,7 +24,7 @@
                 </div>
                 <div class="text">
                     <h1>Users</h1>
-                    <p>20</p>
+                    <p>{{ $count_users }}</p>
                 </div>
             </div>
 
@@ -34,7 +34,7 @@
                 </div>
                 <div class="text">
                     <h1>Categories</h1>
-                    <p>10</p>
+                    <p>{{ $count_categories }}</p>
                 </div>
             </div>
 

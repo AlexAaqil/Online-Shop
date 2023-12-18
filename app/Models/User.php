@@ -43,9 +43,18 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
+    static public function getUsers() {
+        return self::select('users.*')
+        ->where('is_admin', '=', 0)
+        ->where('status', '=', 1)
+        ->orderBy('id', 'desc')
+        ->get();
+    }
+
     static public function getAdmins() {
         return self::select('users.*')
         ->where('is_admin', '=', 1)
+        ->where('status', '=', 1)
         ->orderBy('id', 'desc')
         ->get();
     }

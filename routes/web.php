@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\HomeController;
 use \App\Http\Controllers\AuthController;
@@ -25,7 +26,7 @@ Route::get('/contact', [HomeController::class,'contact'])->name('contact');
 Route::get('/admin', [AuthController::class,'admin_login'])->name('admin_login');
 Route::post('/admin', [AuthController::class,'admin_auth_login'])->name('admin_auth_login');
 Route::group(['middleware' => 'admin'], function() {
-    Route::get('/admin/dashboard', [AdminController::class,'dashboard'])->name('admin_dashboard');
+    Route::get('/admin/dashboard', [DashboardController::class,'index'])->name('admin_dashboard');
 
     Route::get('/admin/list', [AdminController::class,'list_admins'])->name('list_admins');
     Route::get('/admin/add', [AdminController::class,'get_add_admin'])->name('get_add_admin');

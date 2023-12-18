@@ -11,12 +11,6 @@ class AdminController extends Controller
         return view("admin/login");
     }
 
-    public function dashboard() {
-        $count_admins = User::getAdmins()->count();
-
-        return view("admin/dashboard", compact('count_admins'));
-    }
-
     public function list_admins() {
         $list_admins = User::getAdmins();
 
