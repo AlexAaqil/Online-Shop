@@ -18,15 +18,39 @@ class CategoryController extends Controller
 
     public function post_add_category(Request $request) {
         request()->validate([
-            'title'=> 'required|unique',
+            'title'=> 'required|unique:categories',
         ]);
 
         $category = new Category;
         $category->title = $request->title;
-        $category->slug = Str::slug( $request->slug);
-        $category->description = $request->description;
+        $category->slug = Str::slug( $request->title);
         $category->save();
 
-        return view("admin/categories")->with('success', "Category was added successfully");
+        return redirect("admin/categories")->with('success', "Category was added successfully");
+    }
+
+    public function get_update_category($id) {
+        $category = Category::find($id);
+        return view("admin/update_category", compact('category'));
+    }
+
+    public function post_update_category($id, Request $request) {
+        request()->validate([
+            'title' => 'required|unique:categories,title,'.$id,
+        ]);
+
+        $category = Category::find($id);
+        $category->title = $request->title;
+        $category->slug = Str::slug( $request->title );
+        $category->save();
+
+        return redirect("admin/categories")->with('success', "Category was updated successfully");
+    }
+
+    public function delete_category($id) {
+        $category = Category::find($id);
+        $category->delete();
+
+        return redirect()->route('list_categories')->with('success', "Category deleted successfully!");
     }
 }

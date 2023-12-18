@@ -17,6 +17,12 @@ class AdminController extends Controller
         return view("admin/dashboard", compact('count_admins'));
     }
 
+    public function list_admins() {
+        $list_admins = User::getAdmins();
+
+        return view("admin/admins_list", compact('list_admins'));
+    }
+
     public function get_add_admin() {
         return view("admin/add_admin");
     }
@@ -67,19 +73,5 @@ class AdminController extends Controller
         $admin = User::find($id);
         $admin->delete();
         return redirect()->route('list_admins')->with('success', "Admin deleted successfully!");
-    }
-
-    public function list_admins() {
-        $list_admins = User::getAdmins();
-
-        return view("admin/admins_list", compact('list_admins'));
-    }
-
-    public function categories() {
-        return view("admin/categories");
-    }
-
-    public function products() {
-        return view("admin/products");
     }
 }
