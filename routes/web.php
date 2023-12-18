@@ -35,8 +35,11 @@ Route::group(['middleware' => 'admin'], function() {
     Route::delete('/admin/delete/{id}', [AdminController::class,'delete_admin'])->name('delete_admin');
 
     Route::get('/admin/categories', [CategoryController::class, 'list_categories'])->name('list_categories');
-    Route::get('/admin/categories/add', [CategoryController::class, 'get_add_category'])->name('post_add_category');
+    Route::get('/admin/categories/add', [CategoryController::class, 'get_add_category'])->name('get_add_category');
     Route::post('/admin/categories/add', [CategoryController::class, 'post_add_category'])->name('post_add_category');
+    Route::get('/admin/categories/update/{id}', [CategoryController::class, 'get_update_category'])->name('get_update_category');
+    Route::post('/admin/categories/update/{id}', [CategoryController::class, 'post_update_category'])->name('post_update_category');
+    Route::delete('/admin/categories/delete{id}', [CategoryController::class, 'delete_category'])->name('delete_category');
 
     Route::get('/admin/products', [AdminController::class,'products'])->name('admin_products');
     Route::get('/admin/logout', [AuthController::class,'admin_logout'])->name('admin_logout');

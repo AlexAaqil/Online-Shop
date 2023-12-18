@@ -43,14 +43,16 @@ function showConfirmationDialog(message, onConfirm) {
     });
 }
 
-function deleteAdmin() {
-    const message = "You'll delete this admin permanently!";
+function deleteItem(itemId, itemName) {
+    const message = `You'll delete this ${itemName} permanently!`;
 
     // Callback function to handle deletion
     function confirmDelete() {
-        document.getElementById("deleteForm").submit();
+        const formId = `deleteForm_${itemId}`;
+        document.getElementById(formId).submit();
     }
 
     // Show the confirmation dialog with the specified message and callback function
     showConfirmationDialog(message, confirmDelete);
 }
+

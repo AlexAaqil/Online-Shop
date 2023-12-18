@@ -4,7 +4,7 @@
 <main class="Admin">
     @include('admin.aside')
 
-    <section class="main_content Categories">
+    <section class="main_content">
         <div class="header">
             <h1>Admins</h1>
             <input type="text" name="search" id="myInput" placeholder="Search" onkeyup="searchFunction()" />
@@ -40,11 +40,11 @@
                                     </div>
 
                                     <div class="action">
-                                        <form id="deleteForm" action="{{ route('delete_admin', ['id' => $admin->id]) }}" method="POST">
+                                        <form id="deleteForm_{{ $admin->id }}" action="{{ route('delete_admin', ['id' => $admin->id]) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
 
-                                            <a href="javascript:void(0);" onclick="deleteAdmin();">
+                                            <a href="javascript:void(0);" onclick="deleteItem({{ $admin->id }}, 'admin');">
                                                 <i class="fas fa-trash-alt"></i>
                                             </a>
                                         </form>

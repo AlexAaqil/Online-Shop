@@ -4,8 +4,10 @@ $aside_width: 15%;
     display: flex;
 
     form {
-        input {
+        input,
+        textarea {
             width: 100%;
+            padding: 0.4em 0.6em;
             font-size: 1em;
             border: 1px solid grey;
             border-radius: 4px;
@@ -250,11 +252,6 @@ $aside_width: 15%;
 
                 label {
                     font-weight: 550;
-                }
-
-                input {
-                    padding: 0.4em 0.6em;
-                    width: 100%;
                 }
 
                 .custom_radio_buttons {
