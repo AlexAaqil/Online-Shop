@@ -12,6 +12,12 @@ class DashboardController extends Controller
         $count_users = User::getUsers()->count();
         $count_categories = Category::all()->count();
 
-        return view("admin/dashboard", compact('count_admins', 'count_users', 'count_categories'));
+        $data = compact([
+            'count_admins',
+            'count_users',
+            'count_categories'
+        ]);
+
+        return view("admin/dashboard", $data);
     }
 }
