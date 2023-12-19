@@ -338,6 +338,16 @@ $aside_width: 15%;
                     }
                 }
             }
+
+            .product_images {
+                display: flex;
+                width: 150px;
+                height: 150px;
+                object-fit: cover;
+                object-position: center;
+                gap: 0 1em;
+                margin: 0.5em 0;
+            }
         }
     }
 }

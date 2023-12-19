@@ -1,12 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\ProductImage;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Brand;
 use App\Models\Product;
 use Illuminate\Support\Str;
 use Auth;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -40,6 +42,21 @@ class ProductController extends Controller
 
         $product->save();
 
+        $images = $request->file('images');
+        if($images) {
+            foreach($images as $image) {
+                $image_path = $image->store('products', 'public');
+
+                $image_upload = new ProductImage;
+                $image_upload->image_name = $image_path;
+                $image_upload->product_id = $product->id;
+
+                Storage::disk('public')->delete($image_upload->image_name);
+
+                $image_upload->save();
+            }
+        }
+
         return redirect()->route('list_products')->with('success', "Product was added successfully");
     }
 
@@ -67,6 +84,34 @@ class ProductController extends Controller
         $product->brand_id = $request->brand_id;
 
         $product->save();
+
+        $existing_images = $product->productImages->pluck('image_name')->toArray();
+
+        $images = $request->file('images');
+        if($images) {
+            foreach($images as $image) {
+                $image_path = $image->store('products', 'public');
+
+                $image_upload = new ProductImage;
+                $image_upload->image_name = $image_path;
+                $image_upload->product_id = $product->id;
+
+                $image_upload->save();
+            }
+        }
+
+        $images_to_delete = array_diff($existing_images, $request->input('existing_images', []));
+        foreach ($images_to_delete as $image_to_delete) {
+            // Delete all records matching the condition
+            $product_images = ProductImage::where('image_name', $image_to_delete)->get();
+
+            foreach($product_images as $product_image) {
+                $product_image->delete();
+            }
+
+            // Delete the file from storage
+            Storage::disk('public')->delete($image_to_delete);
+        }
 
         return redirect()->route('list_products')->with('success', "Product was updated successfully");
     }

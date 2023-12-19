@@ -10,7 +10,7 @@
                 <h1>Update Product</h1>
             </div>
             <div class="body">
-                <form action="" method="post">
+                <form action="" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="input_group">
                         <label for="title">Title<span>*</span></label>
@@ -70,6 +70,17 @@
                         <label for="description">Description</label>
                         <textarea name="description" id="description" rows="7">{{ $product->description }}</textarea>
                         <span class="inline_alert">{{ $errors->first('description') }}</span>
+                    </div>
+
+                    <div class="input_group">
+                        <label for="images">Images</label>
+                        <input type="file" name="images[]" id="images" accept=".png, .jpg, .jpeg" multiple />
+                    </div>
+
+                    <div class="product_images">
+                        @foreach ($product->getProductImageURLs() as $imageURL)
+                            <img src="{{ $imageURL }}" alt="{{ $product->title }}" />
+                        @endforeach
                     </div>
 
                     <button type="submit">Save</button>

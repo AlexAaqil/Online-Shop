@@ -35,4 +35,31 @@ class Product extends Model
     {
         return $this->belongsTo(User::class, 'created_by');
     }
+
+    public function productImages() {
+        return $this->hasMany(ProductImage::class, 'product_id');
+    }
+
+    public function getProductImageURL() {
+        $product_image = $this->productImages->first();
+
+        if($product_image) {
+            return url('storage/'.$product_image->image_name);
+        }
+        else {
+            return asset('assets/images/default_product.jpg');
+        }
+    }
+
+    public function getProductImageURLs() {
+        $product_images = $this->productImages->map(function ($image) {
+            return url('storage/' . $image->image_name);
+        })->toArray();
+
+        if(empty($product_images)) {
+            return [asset('assets/images/default_product.jpg')];
+        }
+
+        return $product_images;
+    }
 }

@@ -20,6 +20,7 @@
                 <table>
                     <thead>
                         <tr>
+                            <th>Image</th>
                             <th>Title</th>
                             <th>Slug</th>
                             <th>Price</th>
@@ -33,6 +34,7 @@
                     <tbody>
                         @foreach($products as $product)
                             <tr>
+                                <td><img src="{{ $product->getProductImageURL() }}" alt="{{ $product->title }}"></td>
                                 <td>{{ $product->title }}</td>
                                 <td>{{ $product->slug }}</td>
                                 <td>{{ $product->price }}</td>
