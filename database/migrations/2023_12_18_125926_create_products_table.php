@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('title');
             $table->string('slug')->unique();
             $table->text('description')->nullable();
-            $table->string('color_code')->nullable();
             $table->string('size', 30)->nullable();
             $table->decimal('price', 10, 2)->default(0);
             $table->decimal('new_price', 10, 2)->default(0)->nullable();

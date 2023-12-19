@@ -67,12 +67,6 @@
                     </div>
 
                     <div class="input_group">
-                        <label for="color_code">Color</label>
-                        <input type="color" name="color_code" id="color_code" value="{{ old('color_code', $product->color_code) }}" />
-                        <span class="inline_alert">{{ $errors->first('color_code') }}</span>
-                    </div>
-
-                    <div class="input_group">
                         <label for="description">Description</label>
                         <textarea name="description" id="description" rows="7">{{ $product->description }}</textarea>
                         <span class="inline_alert">{{ $errors->first('description') }}</span>

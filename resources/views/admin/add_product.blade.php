@@ -10,7 +10,7 @@
                 <h1>Add New Product</h1>
             </div>
             <div class="body">
-                <form action="" method="post">
+                <form action="" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="input_group">
                         <label for="title">Title<span>*</span></label>
@@ -58,14 +58,14 @@
                     </div>
 
                     <div class="input_group">
-                        <label for="color_code">Color</label>
-                        <input type="color" name="color_code" id="color_code" value="{{ old('color') }}" />
-                    </div>
-
-                    <div class="input_group">
                         <label for="description">Description</label>
                         <textarea name="description" id="description" rows="7" value="{{ old('description') }}" placeholder="Enter a Description"></textarea>
                         <span class="inline_alert">{{ $errors->first('description') }}</span>
+                    </div>
+
+                    <div class="input_group">
+                        <label for="images">Images</label>
+                        <input type="file" name="images[]" id="images" accept=".png, .jpg, .jpeg" multiple />
                     </div>
 
                     <button type="submit">Save</button>

@@ -31,7 +31,6 @@ class ProductController extends Controller
         $product->title = $request->title;
         $product->slug = Str::slug( $request->title);
         $product->description = $request->description;
-        $product->color_code = $request->color_code;
         $product->size = $request->size;
         $product->price = $request->price;
         $product->new_price = $request->new_price;
@@ -61,7 +60,6 @@ class ProductController extends Controller
         $product->title = $request->title;
         $product->slug = Str::slug( $request->title);
         $product->description = $request->description;
-        $product->color_code = $request->color_code;
         $product->size = $request->size;
         $product->price = $request->price;
         $product->new_price = $request->new_price;
