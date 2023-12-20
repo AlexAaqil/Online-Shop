@@ -39,27 +39,4 @@ class Product extends Model
     public function getProductImages() {
         return $this->hasMany(ProductImage::class, 'product_id')->orderBy('order_by', 'asc');
     }
-
-    // public function getProductImageURL() {
-    //     $product_image_url = $this->getProductImages->first();
-
-    //     if(!empty($product_image_url)) {
-    //         return url('storage/public'.$product_image_url->image_name);
-    //     }
-    //     else {
-    //         return asset('assets/images/default_product.jpg');
-    //     }
-    // }
-
-    // public function getProductImageURLs() {
-    //     $product_images = $this->productImages->map(function ($image) {
-    //         return url('storage/' . $image->image_name);
-    //     })->toArray();
-
-    //     if(empty($product_images)) {
-    //         return [asset('assets/images/default_product.jpg')];
-    //     }
-
-    //     return $product_images;
-    // }
 }
