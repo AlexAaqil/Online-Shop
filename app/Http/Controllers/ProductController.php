@@ -45,13 +45,15 @@ class ProductController extends Controller
         $images = $request->file('images');
         if($images) {
             foreach($images as $image) {
-                $image_path = $image->store('products', 'public');
+                $random_string = date('Ymdhis').Str::random(5);
+                $extension = $image->getClientOriginalExtension();
+                $filename = $random_string. '.' .$extension;
+
+                $image_path = $image->storeAs('products', $filename, 'public');
 
                 $image_upload = new ProductImage;
                 $image_upload->image_name = $image_path;
                 $image_upload->product_id = $product->id;
-
-                Storage::disk('public')->delete($image_upload->image_name);
 
                 $image_upload->save();
             }
@@ -96,7 +98,11 @@ class ProductController extends Controller
             // Check if the total number of images doesn't exceed five
             if ($total_images <= 5) {
                 foreach ($images as $image) {
-                    $image_path = $image->store('products', 'public');
+                    $random_string = date('Ymdhis').Str::random(5);
+                    $extension = $image->getClientOriginalExtension();
+                    $filename = $random_string. '.' .$extension;
+
+                    $image_path = $image->storeAs('products', $filename, 'public');
 
                     $image_upload = new ProductImage;
                     $image_upload->image_name = $image_path;
