@@ -82,11 +82,11 @@
                         <span class="inline_alert_success">{{ session('success') }}</span>
                     @endif
 
-                    <div class="product_images">
+                    <div class="product_images" id="sortable">
                         @if(!empty($product_images->count()))
                             @foreach ($product_images as $image)
                                 @if(!empty($image->getProductImageURL()))
-                                    <div class="product_image">
+                                    <div class="product_image sortable_images" id={{ $image->id }}>
                                         <img src="{{ $image->getProductImageURL() }}" alt="{{ $image->image_name }}" />
                                         <a href="javascript:void(0);" onclick="deleteItem({{ $image->id }}, 'image', '{{ url('/admin/products/delete_product_image/'.$image->id) }}');">
                                             <i class="fas fa-trash-alt"></i>
@@ -104,4 +104,33 @@
     </section>
 </main>
 @include('partials.footer_js')
+<script>
+    $(document).ready(function() {
+    $("#sortable").sortable({
+        update : function(event, ui) {
+            var photo_id = new Array();
+            $('.sortable_images').each(function() {
+                var id = $(this).attr('id');
+                photo_id.push(id);
+            });
+
+            $.ajax({
+                type : "POST",
+                url : "{{ url('admin/products/product_images_sort') }}",
+                data : {
+                    "photo_id" : photo_id,
+                    "_token" : "{{ csrf_token() }}"
+                },
+                dataType : "json",
+                success : function(data) {
+
+                },
+                error : function (data) {
+
+                }
+            });
+        }
+    });
+});
+</script>
 @endsection

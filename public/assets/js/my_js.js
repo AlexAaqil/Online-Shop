@@ -54,3 +54,34 @@ function deleteItem(itemId, itemName, url = null) {
 
     showConfirmationDialog(message, confirmAction);
 }
+
+
+
+// AJAX Image Sorting
+// $(document).ready(function() {
+//     $("#sortable").sortable({
+//         update : function(event, ui) {
+//             var photo_id = new Array();
+//             $('.sortable_images').each(function() {
+//                 var id = $(this).attr('id');
+//                 photo_id.push(id);
+//             });
+
+//             $.ajax({
+//                 type : "POST",
+//                 url : "{{ url('admin/products/product_images_sort') }}",
+//                 data : {
+//                     "photo_id" : photo_id,
+//                     "_token" : "{{ csrf_token() }}"
+//                 },
+//                 dataType : "json",
+//                 success : function(data) {
+
+//                 },
+//                 error : function (data) {
+
+//                 }
+//             });
+//         }
+//     });
+// });

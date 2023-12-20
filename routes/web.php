@@ -59,6 +59,7 @@ Route::group(['middleware' => 'admin'], function() {
     Route::post('/admin/products/update/{id}', [ProductController::class, 'post_update_product'])->name('post_update_product');
     Route::delete('/admin/products/delete/{id}', [ProductController::class, 'delete_product'])->name('delete_product');
     Route::get('/admin/products/delete_product_image/{id}', [ProductController::class, 'delete_product_image'])->name('delete_product_image');
+    Route::post('/admin/products/product_images_sort', [ProductController::class, 'product_images_sort'])->name('product_images_sort');
 
     Route::get('/admin/logout', [AuthController::class,'admin_logout'])->name('admin_logout');
 });

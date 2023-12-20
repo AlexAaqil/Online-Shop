@@ -119,6 +119,22 @@ class ProductController extends Controller
         return redirect()->route('list_products')->with('success', 'Product was updated successfully');
     }
 
+    public function product_images_sort(Request $request) {
+        if(!empty($request->photo_id)) {
+            $i = 1;
+            foreach($request->photo_id as $photo_id) {
+                $image = ProductImage::find($photo_id);
+                $image->order_by = $i;
+                $image->save();
+
+                $i++;
+            }
+        }
+
+        $json['success'] = true;
+        echo json_encode($json);
+    }
+
     public function delete_product_image($id) {
         // Delete the selected image matching the condition
         $image = ProductImage::find($id);
