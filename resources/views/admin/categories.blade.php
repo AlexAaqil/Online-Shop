@@ -26,9 +26,9 @@
                         </tr>
                     </thead>
 
-                    <tbody>
+                    <tbody class="searchable">
                         @foreach($categories as $category)
-                        <tr class="searchable">
+                        <tr>
                             <td>{{ $category->title }}</td>
                             <td>{{ $category->slug }}</td>
                             <td>

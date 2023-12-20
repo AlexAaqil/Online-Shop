@@ -25,9 +25,9 @@
                         </tr>
                     </thead>
 
-                    <tbody>
+                    <tbody class="searchable">
                         @foreach($brands as $brand)
-                            <tr class="searchable">
+                            <tr>
                                 <td>{{ $brand->title }}</td>
                                 <td>
                                     <div class="actions">

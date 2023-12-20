@@ -64,7 +64,7 @@
                     </div>
 
                     <div class="input_group">
-                        <label for="images">Images</label>
+                        <label for="images">Images (Maximum allowed images is 5)</label>
                         <input type="file" name="images[]" id="images" accept=".png, .jpg, .jpeg" multiple />
                     </div>
 

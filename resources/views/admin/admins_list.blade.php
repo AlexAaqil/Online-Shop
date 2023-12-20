@@ -27,9 +27,9 @@
                         </tr>
                     </thead>
 
-                    <tbody>
+                    <tbody class="searchable">
                         @foreach($list_admins as $admin)
-                        <tr class="searchable">
+                        <tr>
                             <td>{{ $admin->first_name }} {{ $admin->last_name }}</td>
                             <td>{{ $admin->email }}</td>
                             <td>{{ $admin->status === 1 ? 'Active' : 'Not Active' }}</td>

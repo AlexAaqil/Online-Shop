@@ -31,7 +31,7 @@
                         </tr>
                     </thead>
 
-                    <tbody>
+                    <tbody class="searchable">
                         @foreach($products as $product)
                             <tr>
                                 <td>
