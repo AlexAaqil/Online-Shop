@@ -126,10 +126,13 @@ class ProductController extends Controller
         return redirect()->route('list_products')->with('success', 'Product was updated successfully');
     }
 
-
-
     public function delete_product($id) {
         $product = Product::find($id);
+
+        // Delete the product images
+        $product->productImages()->delete();
+
+        // Delete the product
         $product->delete();
 
         return redirect()->route('list_products')->with('success', "Product deleted successfully!");
