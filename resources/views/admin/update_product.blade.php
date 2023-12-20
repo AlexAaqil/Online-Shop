@@ -87,7 +87,15 @@
                                 @if(!empty($image->getProductImageURL()))
                                     <div class="product_image">
                                         <img src="{{ $image->getProductImageURL() }}" alt="{{ $image->image_name }}" />
-                                        <a href="{{ url('/admin/products/delete_product_image/'.$image->id) }}">x</a>
+                                        {{-- <a href="{{ url('/admin/products/delete_product_image/'.$image->id) }}">x</a> --}}
+                                        <form id="deleteForm_{{ $image->id }}" action="{{ route('delete_product_image', ['id' => $image->id]) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+
+                                            <a href="javascript:void(0);" onclick="deleteItem({{ $image->id }}, 'image');">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </a>
+                                        </form>
                                     </div>
                                 @endif
                             @endforeach
@@ -100,4 +108,5 @@
         </div>
     </section>
 </main>
+@include('partials.footer_js')
 @endsection
