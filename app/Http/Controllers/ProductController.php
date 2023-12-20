@@ -135,11 +135,19 @@ class ProductController extends Controller
     public function delete_product($id) {
         $product = Product::find($id);
 
-        // Delete the product images
+        // Retrieve image paths before deleting from database
+        $image_paths = $product->productImages->pluck('image_name')->toArray();
+
+        // Delete the product images (database records)
         $product->productImages()->delete();
 
         // Delete the product
         $product->delete();
+
+        // Delete the files from storage
+        foreach ($image_paths as $image_path) {
+            Storage::disk('public')->delete($image_path);
+        }
 
         return redirect()->route('list_products')->with('success', "Product deleted successfully!");
     }
