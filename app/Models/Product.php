@@ -36,30 +36,30 @@ class Product extends Model
         return $this->belongsTo(User::class, 'created_by');
     }
 
-    public function productImages() {
+    public function getProductImages() {
         return $this->hasMany(ProductImage::class, 'product_id');
     }
 
-    public function getProductImageURL() {
-        $product_image = $this->productImages->first();
+    // public function getProductImageURL() {
+    //     $product_image_url = $this->getProductImages->first();
 
-        if($product_image) {
-            return url('storage/'.$product_image->image_name);
-        }
-        else {
-            return asset('assets/images/default_product.jpg');
-        }
-    }
+    //     if(!empty($product_image_url)) {
+    //         return url('storage/public'.$product_image_url->image_name);
+    //     }
+    //     else {
+    //         return asset('assets/images/default_product.jpg');
+    //     }
+    // }
 
-    public function getProductImageURLs() {
-        $product_images = $this->productImages->map(function ($image) {
-            return url('storage/' . $image->image_name);
-        })->toArray();
+    // public function getProductImageURLs() {
+    //     $product_images = $this->productImages->map(function ($image) {
+    //         return url('storage/' . $image->image_name);
+    //     })->toArray();
 
-        if(empty($product_images)) {
-            return [asset('assets/images/default_product.jpg')];
-        }
+    //     if(empty($product_images)) {
+    //         return [asset('assets/images/default_product.jpg')];
+    //     }
 
-        return $product_images;
-    }
+    //     return $product_images;
+    // }
 }

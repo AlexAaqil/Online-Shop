@@ -78,11 +78,21 @@
                         <span class="inline_alert">{{ session('error') ? session('error') : ($errors->has('images') ? $errors->first('images') : '') }}</span>
                     </div>
 
-                    <div class="product_images">
-                        @foreach ($product->getProductImageURLs() as $imageURL)
-                            <img src="{{ $imageURL }}" alt="{{ $product->title }}" />
-                        @endforeach
-                    </div>
+                    @if(!empty($product_images->count()))
+                        @if(!empty(session('success')))
+                            <span class="inline_alert_success">{{ session('success') }}</span>
+                        @endif
+                        <div class="product_images">
+                            @foreach ($product_images as $image)
+                                @if(!empty($image->getProductImageURL()))
+                                    <div class="product_image">
+                                        <img src="{{ $image->getProductImageURL() }}" alt="{{ $image->image_name }}" />
+                                        <a href="{{ url('/admin/products/delete_product_image/'.$image->id) }}">x</a>
+                                    </div>
+                                @endif
+                            @endforeach
+                        </div>
+                    @endif
 
                     <button type="submit">Save</button>
                 </form>

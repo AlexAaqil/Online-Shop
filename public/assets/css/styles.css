@@ -574,14 +574,38 @@ Footer .copyright {
 }
 .Admin .customized_form form .product_images {
   display: flex;
-  width: 150px;
-  height: 150px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
   gap: 0 1em;
   margin: 0.5em 0;
+}
+.Admin .customized_form form .product_images .product_image {
+  position: relative;
+}
+.Admin .customized_form form .product_images .product_image img {
+  width: 120px;
+  height: 120px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+  background: rgb(221, 221, 221);
+}
+.Admin .customized_form form .product_images .product_image a {
+  text-decoration: none;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: red;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2em;
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
 }
 
 @media screen and (width >= 900px) {
@@ -617,4 +641,10 @@ Footer .copyright {
   margin: 0.1em 0 0;
   font-weight: bold;
   color: rgb(235, 4, 4);
+}
+
+.inline_alert_success {
+  padding: 0.5em;
+  margin: 0.5em 0;
+  color: rgb(2, 168, 29);
 }/*# sourceMappingURL=styles.css.map */

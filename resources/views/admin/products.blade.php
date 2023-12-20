@@ -34,7 +34,14 @@
                     <tbody>
                         @foreach($products as $product)
                             <tr>
-                                <td><img src="{{ $product->getProductImageURL() }}" alt="{{ $product->title }}"></td>
+                                <td>
+                                    @php
+                                        $productImages = $product->getProductImages;
+                                        $firstImage = $productImages->isNotEmpty() ? $productImages->first()->image_name : '/assets/images/default_product.jpg';
+                                    @endphp
+
+                                    <img src="{{ url('storage/'.$firstImage) }}" alt="{{ $product->title }}">
+                                </td>
                                 <td>{{ $product->title }}</td>
                                 <td>{{ $product->slug }}</td>
                                 <td>{{ $product->price }}</td>

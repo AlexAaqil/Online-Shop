@@ -341,12 +341,39 @@ $aside_width: 15%;
 
             .product_images {
                 display: flex;
-                width: 150px;
-                height: 150px;
-                object-fit: cover;
-                object-position: center;
                 gap: 0 1em;
                 margin: 0.5em 0;
+
+                .product_image {
+                    position: relative;
+
+                    img {
+                        width: 120px;
+                        height: 120px;
+                        object-fit: contain;
+                        object-position: center;
+                        background: rgb(221, 221, 221);
+                    }
+
+                    a {
+                        text-decoration: none;
+                        cursor: pointer;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        background: red;
+                        color: white;
+                        font-weight: bold;
+                        font-size: 1.2em;
+                        padding: 8px;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
             }
         }
     }

@@ -30,6 +30,12 @@ $warning: rgb(194, 128, 5);
     color: $danger;
 }
 
+.inline_alert_success {
+    padding: 0.5em;
+    margin: 0.5em 0;
+    color: $success;
+}
+
 
 // @keyframes fade-out {
 //     from {

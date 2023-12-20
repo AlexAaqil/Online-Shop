@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Storage;
 class ProductController extends Controller
 {
     public function list_products() {
-        $products = Product::with('category', 'brand', 'createdBy')->get();
+        $products = Product::with('category', 'brand', 'createdBy', 'getProductImages')->get();
         return view("admin/products", compact("products"));
     }
 
@@ -66,7 +66,8 @@ class ProductController extends Controller
         $product = Product::find($id);
         $categories = Category::all();
         $brands = Brand::all();
-        return view("admin/update_product", compact('product', 'categories', 'brands'));
+        $product_images = $product->getProductImages;
+        return view("admin/update_product", compact('product', 'categories', 'brands', 'product_images'));
     }
 
     public function post_update_product($id, Request $request) {
@@ -88,7 +89,7 @@ class ProductController extends Controller
         $product->save();
 
         // Retrieve existing images
-        $existing_images = $product->productImages->pluck('image_name')->toArray();
+        $existing_images = $product->getProductImages->pluck('image_name')->toArray();
 
         // Check if new images are being uploaded
         $images = $request->file('images');
@@ -113,33 +114,32 @@ class ProductController extends Controller
             } else {
                 return redirect()->route('get_update_product', $product->id)->withErrors(['images' => 'You can upload a maximum of five images.'])->withInput();
             }
-
-            // Remove images that are explicitly marked for deletion
-            $images_to_delete = $request->input('delete_images', []);
-            foreach ($images_to_delete as $image_to_delete) {
-                // Delete all records matching the condition
-                $product_images = ProductImage::where('image_name', $image_to_delete)->get();
-
-                foreach ($product_images as $product_image) {
-                    $product_image->delete();
-                }
-
-                // Delete the file from storage
-                Storage::disk('public')->delete($image_to_delete);
-            }
         }
 
         return redirect()->route('list_products')->with('success', 'Product was updated successfully');
+    }
+
+    public function delete_product_image($id) {
+        // Delete the selected image matching the condition
+        $image = ProductImage::find($id);
+
+        // Delete from the database
+        $image->delete();
+
+        // Delete the file from storage
+        Storage::disk('public')->delete($image->image_name);
+
+        return redirect()->route('get_update_product', $image->product_id)->with('success','Image deleted Successfully');
     }
 
     public function delete_product($id) {
         $product = Product::find($id);
 
         // Retrieve image paths before deleting from database
-        $image_paths = $product->productImages->pluck('image_name')->toArray();
+        $image_paths = $product->getProductImages->pluck('image_name')->toArray();
 
         // Delete the product images (database records)
-        $product->productImages()->delete();
+        $product->getProductImages()->delete();
 
         // Delete the product
         $product->delete();
