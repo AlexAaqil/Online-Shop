@@ -78,29 +78,24 @@
                         <span class="inline_alert">{{ session('error') ? session('error') : ($errors->has('images') ? $errors->first('images') : '') }}</span>
                     </div>
 
-                    @if(!empty($product_images->count()))
-                        @if(!empty(session('success')))
-                            <span class="inline_alert_success">{{ session('success') }}</span>
-                        @endif
-                        <div class="product_images">
+                    @if(!empty(session('success')))
+                        <span class="inline_alert_success">{{ session('success') }}</span>
+                    @endif
+
+                    <div class="product_images">
+                        @if(!empty($product_images->count()))
                             @foreach ($product_images as $image)
                                 @if(!empty($image->getProductImageURL()))
                                     <div class="product_image">
                                         <img src="{{ $image->getProductImageURL() }}" alt="{{ $image->image_name }}" />
-                                        {{-- <a href="{{ url('/admin/products/delete_product_image/'.$image->id) }}">x</a> --}}
-                                        <form id="deleteForm_{{ $image->id }}" action="{{ route('delete_product_image', ['id' => $image->id]) }}" method="POST">
-                                            @csrf
-                                            @method('DELETE')
-
-                                            <a href="javascript:void(0);" onclick="deleteItem({{ $image->id }}, 'image');">
-                                                <i class="fas fa-trash-alt"></i>
-                                            </a>
-                                        </form>
+                                        <a href="{{ url('admin/products/delete_product_image', $image->id) }}" onclick="deleteItem({{ $image->id }}, 'image');">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </a>
                                     </div>
                                 @endif
                             @endforeach
-                        </div>
-                    @endif
+                        @endif
+                    </div>
 
                     <button type="submit">Save</button>
                 </form>
