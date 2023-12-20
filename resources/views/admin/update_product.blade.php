@@ -75,6 +75,7 @@
                     <div class="input_group">
                         <label for="images">Images</label>
                         <input type="file" name="images[]" id="images" accept=".png, .jpg, .jpeg" multiple />
+                        <span class="inline_alert">{{ session('error') ? session('error') : ($errors->has('images') ? $errors->first('images') : '') }}</span>
                     </div>
 
                     <div class="product_images">
