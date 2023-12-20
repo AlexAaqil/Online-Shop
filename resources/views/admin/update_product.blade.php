@@ -88,7 +88,7 @@
                                 @if(!empty($image->getProductImageURL()))
                                     <div class="product_image">
                                         <img src="{{ $image->getProductImageURL() }}" alt="{{ $image->image_name }}" />
-                                        <a href="{{ url('admin/products/delete_product_image', $image->id) }}" onclick="deleteItem({{ $image->id }}, 'image');">
+                                        <a href="javascript:void(0);" onclick="deleteItem({{ $image->id }}, 'image', '{{ url('/admin/products/delete_product_image/'.$image->id) }}');">
                                             <i class="fas fa-trash-alt"></i>
                                         </a>
                                     </div>

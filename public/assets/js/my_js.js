@@ -20,12 +20,6 @@ function searchFunction() {
 }
 
 
-// function deleteAdmin() {
-//     if (confirm("Are you sure you want to delete this admin?")) {
-//         document.getElementById("deleteForm").submit();
-//     }
-// }
-
 
 function showConfirmationDialog(message, onConfirm) {
     Swal.fire({
@@ -35,7 +29,7 @@ function showConfirmationDialog(message, onConfirm) {
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
         cancelButtonColor: "#d33",
-        confirmButtonText: "Yes, proceed!",
+        confirmButtonText: "Yes, delete!",
     }).then((result) => {
         if (result.isConfirmed) {
             onConfirm();
@@ -43,16 +37,20 @@ function showConfirmationDialog(message, onConfirm) {
     });
 }
 
-function deleteItem(itemId, itemName) {
-    const message = `You'll delete this ${itemName} permanently!`;
 
-    // Callback function to handle deletion
-    function confirmDelete() {
-        const formId = `deleteForm_${itemId}`;
-        document.getElementById(formId).submit();
-    }
+// For forms: deleteItem(itemId, itemName);
+// For links: deleteItem(itemId, itemName, url);
 
-    // Show the confirmation dialog with the specified message and callback function
-    showConfirmationDialog(message, confirmDelete);
+function deleteItem(itemId, itemName, url = null) {
+    const message = `This ${itemName} will be deleted permanently!`;
+
+    // Choose the appropriate confirmation action based on the presence of a URL
+    const confirmAction = url
+        ? () => (window.location.href = url)
+        : () => {
+              const formId = `deleteForm_${itemId}`;
+              document.getElementById(formId).submit();
+          };
+
+    showConfirmationDialog(message, confirmAction);
 }
-
