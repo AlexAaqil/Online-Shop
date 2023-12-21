@@ -237,6 +237,13 @@ nav .container ul {
     width: 300px;
   }
 }
+.Shop .hero {
+  height: 20vh;
+  background: beige;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .Shop .topnav {
   position: sticky;
   top: 4vh;
@@ -259,15 +266,15 @@ nav .container ul {
 .Shop .container .sidenav {
   background: hsl(0, 0%, 94%);
   width: 13%;
-  height: 60%;
+  height: 40%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 1em;
   padding: 0 1em;
   position: fixed;
-  top: 20%;
-  left: 0%;
+  top: transformY(50%);
+  left: 0;
   border-radius: 0 16px 16px 0;
 }
 .Shop .container .sidenav .dropdown button {
@@ -298,7 +305,7 @@ nav .container ul {
 }
 .Shop .container .products {
   margin-left: 13%;
-  padding: 1em 2em 2em;
+  padding: 0 2em 2em;
 }
 .Shop .container .products .products_wrapper {
   display: grid;
