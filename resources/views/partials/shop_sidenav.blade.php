@@ -4,7 +4,7 @@
         <button class="drop_down_btn" onclick="dropDown(this)">Category <i class="fa fa-caret-down"></i></button>
         <ul class="dropdown_list" id="dropdown_list">
             @foreach($categories as $category)
-                <li><a href="{{ url('/'.$category->slug) }}">{{ $category->title }}</a></li>
+                <li><a href="{{ url('/shop'.$category->slug) }}">{{ $category->title }}</a></li>
             @endforeach
             <li><a href="{{ route('shop') }}">View all</a></li>
         </ul>

@@ -28,7 +28,7 @@ Route::get('/about', [HomeController::class,'about'])->name('about');
 Route::get('/contact', [HomeController::class,'contact'])->name('contact');
 
 Route::get('/shop', [ShopController::class, 'shop'])->name('shop');
-Route::get('/{slug}', [ShopController::class, 'categorised_products'])->name('categorised_products');
+Route::get('/shop/{slug}', [ShopController::class, 'categorised_products'])->name('categorised_products');
 
 
 Route::get('/admin', [AuthController::class,'admin_login'])->name('admin_login');
