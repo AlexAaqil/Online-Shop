@@ -40,7 +40,6 @@ function dropDown(clickedButton) {
 
 
 
-
 function showConfirmationDialog(message, onConfirm) {
     Swal.fire({
         title: "Are you sure?",
