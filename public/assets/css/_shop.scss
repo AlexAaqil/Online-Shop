@@ -1,0 +1,134 @@
+.Shop {
+    .topnav {
+        position: sticky;
+        top: 4vh;
+        width: 100%;
+        text-align: center;
+        padding: 1em 0;
+
+        input {
+            padding: 0.7em 1em;
+            border-radius: 32px;
+            width: 50%;
+            margin: auto;
+            font-size: 1em;
+        }
+    }
+
+    .container {
+        display: grid;
+        justify-items: center;
+        padding: 0;
+
+        $sidenav_width: 13%;
+        $sidenav_background: hsl(0, 0%, 94%);
+        $cart_background: hsl(182, 99%, 28%);
+        .sidenav {
+            background: $sidenav_background;
+            width: $sidenav_width;
+            height: 60%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1em;
+            padding: 0 1em;
+            position: fixed;
+            top: 20%;
+            left: 0%;
+            border-radius: 0 16px 16px 0;
+
+            .dropdown {
+                button {
+                    border: none;
+                    font-size: 1em;
+                    position: relative;
+
+                    i {
+                        transition: transform 0.4s ease-in-out;
+                    }
+
+                    &.clicked {
+                        i {
+                            transform: rotate(180deg);
+                        }
+                    }
+                }
+
+                ul {
+                    list-style: none;
+                    display: none;
+
+                    &.active {
+                        position: absolute;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 0.2em;
+                        background: $cart_background;
+                        color: #fff;
+                        padding: 0.5em;
+                        border-radius: 8px;
+                        z-index: 1;
+                    }
+                }
+            }
+        }
+
+        .products {
+            margin-left: $sidenav_width;
+            padding: 1em 2em 2em;
+
+            .products_wrapper {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1em 2em;
+
+                .product {
+                    border-radius: 16px;
+                    box-shadow: 2px 4px 10px #b1b1b1;
+
+                    .image {
+                        height: 250px;
+
+                        img {
+                            border-radius: 16px 16px 0 0;
+                            height: 100%;
+                            width: 100%;
+                            object-fit: cover;
+                            object-position: center;
+                        }
+                    }
+
+                    .details {
+                        display: grid;
+                        grid-template-columns: 3fr 1fr;
+                        align-items: center;
+                        gap: 0 1em;
+                        margin: 0.4em 0;
+                        padding: 0.5em 0.8em;
+
+                        .price {
+                            font-weight: bold;
+                            font-size: 1.1em;
+                        }
+
+                        .cart {
+                            width: 50px;
+                            height: 50px;
+                            display: grid;
+                            align-items: center;
+                            justify-items: center;
+                            border-radius: 50%;
+                            background: hsl(182, 100%, 32%);
+                            color: #fff;
+                            cursor: pointer;
+
+                            i {
+                                font-size: 1.5em;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

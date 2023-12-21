@@ -21,6 +21,26 @@ function searchFunction() {
 
 
 
+function dropDown(clickedButton) {
+    // Get the corresponding dropdown list
+    var list = clickedButton.nextElementSibling;
+
+    // Close any open dropdown lists except the current one
+    document.querySelectorAll(".dropdown_list").forEach(function (otherList) {
+        if (otherList !== list) {
+            otherList.classList.remove("active");
+        }
+    });
+
+    // Toggle the "active" class on the clicked dropdown list
+    list.classList.toggle("active");
+    // Toggle the "clicked" class on the clicked button
+    clickedButton.classList.toggle("clicked");
+}
+
+
+
+
 function showConfirmationDialog(message, onConfirm) {
     Swal.fire({
         title: "Are you sure?",

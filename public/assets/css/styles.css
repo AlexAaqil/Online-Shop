@@ -237,6 +237,117 @@ nav .container ul {
     width: 300px;
   }
 }
+.Shop .topnav {
+  position: sticky;
+  top: 4vh;
+  width: 100%;
+  text-align: center;
+  padding: 1em 0;
+}
+.Shop .topnav input {
+  padding: 0.7em 1em;
+  border-radius: 32px;
+  width: 50%;
+  margin: auto;
+  font-size: 1em;
+}
+.Shop .container {
+  display: grid;
+  justify-items: center;
+  padding: 0;
+}
+.Shop .container .sidenav {
+  background: hsl(0, 0%, 94%);
+  width: 13%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1em;
+  padding: 0 1em;
+  position: fixed;
+  top: 20%;
+  left: 0%;
+  border-radius: 0 16px 16px 0;
+}
+.Shop .container .sidenav .dropdown button {
+  border: none;
+  font-size: 1em;
+  position: relative;
+}
+.Shop .container .sidenav .dropdown button i {
+  transition: transform 0.4s ease-in-out;
+}
+.Shop .container .sidenav .dropdown button.clicked i {
+  transform: rotate(180deg);
+}
+.Shop .container .sidenav .dropdown ul {
+  list-style: none;
+  display: none;
+}
+.Shop .container .sidenav .dropdown ul.active {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+  background: hsl(182, 99%, 28%);
+  color: #fff;
+  padding: 0.5em;
+  border-radius: 8px;
+  z-index: 1;
+}
+.Shop .container .products {
+  margin-left: 13%;
+  padding: 1em 2em 2em;
+}
+.Shop .container .products .products_wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1em 2em;
+}
+.Shop .container .products .products_wrapper .product {
+  border-radius: 16px;
+  box-shadow: 2px 4px 10px #b1b1b1;
+}
+.Shop .container .products .products_wrapper .product .image {
+  height: 250px;
+}
+.Shop .container .products .products_wrapper .product .image img {
+  border-radius: 16px 16px 0 0;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.Shop .container .products .products_wrapper .product .details {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  align-items: center;
+  gap: 0 1em;
+  margin: 0.4em 0;
+  padding: 0.5em 0.8em;
+}
+.Shop .container .products .products_wrapper .product .details .price {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+.Shop .container .products .products_wrapper .product .details .cart {
+  width: 50px;
+  height: 50px;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  border-radius: 50%;
+  background: hsl(182, 100%, 32%);
+  color: #fff;
+  cursor: pointer;
+}
+.Shop .container .products .products_wrapper .product .details .cart i {
+  font-size: 1.5em;
+}
+
 .Contact {
   padding: 3em 0;
 }
