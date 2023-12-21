@@ -296,12 +296,16 @@ nav .container ul {
   position: absolute;
   display: flex;
   flex-direction: column;
-  gap: 0.2em;
+  gap: 0.5em;
   background: hsl(182, 99%, 28%);
-  color: #fff;
   padding: 0.5em;
   border-radius: 8px;
   z-index: 1;
+}
+.Shop .container .sidenav .dropdown ul.active li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1em;
 }
 .Shop .container .products {
   margin-left: 13%;
@@ -353,6 +357,16 @@ nav .container ul {
 }
 .Shop .container .products .products_wrapper .product .details .cart i {
   font-size: 1.5em;
+}
+.Shop .slug_404 {
+  text-align: center;
+  margin-top: 4em;
+}
+.Shop .slug_404 img {
+  width: 250px;
+  height: 250px;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .Contact {

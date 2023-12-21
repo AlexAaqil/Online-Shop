@@ -10,11 +10,11 @@
         </ul>
     </div>
 
-    <div class="dropdown">
+    {{-- <div class="dropdown">
         <button class="drop_down_btn" onclick="dropDown(this)">Price <i class="fa fa-caret-down"></i></button>
         <ul class="dropdown_list" id="dropdown_list">
             <li>50 - 100</li>
             <li>101 - 300</li>
         </ul>
-    </div>
+    </div> --}}
 </div>
