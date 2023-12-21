@@ -39,4 +39,13 @@ class Product extends Model
     public function getProductImages() {
         return $this->hasMany(ProductImage::class, 'product_id')->orderBy('order_by', 'asc');
     }
+
+    public function getFirstImage() {
+        $productImages = $this->getProductImages;
+        $imagePath = $productImages->isNotEmpty()
+            ? $productImages->first()->image_name
+            : '/assets/images/default_product.jpg';
+
+        return url('storage/' . $imagePath); // Include url() generation here
+    }
 }
