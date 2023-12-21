@@ -8,6 +8,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\ProductController;
+use App\HTTP\Controllers\SubcategoryController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -49,12 +50,20 @@ Route::group(['middleware' => 'admin'], function() {
     Route::post('/admin/categories/update/{id}', [CategoryController::class, 'post_update_category'])->name('post_update_category');
     Route::delete('/admin/categories/delete{id}', [CategoryController::class, 'delete_category'])->name('delete_category');
 
+
+    Route::get('/admin/subcategories',[subcategorycontroller::class,'list_sub_categories'])->name('list_sub_categories');
+    Route::get('/admin/subcategories/add',[SubcategoryController::class,'get_add_sub_category'])->name('get_add_sub_category');
+    Route::post('/admin/subcategories/add',[SubcategoryController::class,'post_add_sub_category'])->name('post_add_sub_category');
+    Route::get('/admin/subcategories/update/{id}',[SubcategoryController::class,'get_update_sub_category'])->name('get_update_sub_category');
+    Route::post('/admin/subcategories/update/{id}',[SubcategoryController::class,'post_update_sub_category'])->name('post_update_sub_category');
+    Route::delete('/admin/subcategories/delete/{id}',[SubCategoryController::class,'delete_sub_category'])->name('delete_sub_category');
+
     Route::get('/admin/brands', [BrandController::class, 'list_brands'])->name('list_brands');
     Route::get('/admin/brands/add', [BrandController::class, 'get_add_brand'])->name('get_add_brand');
     Route::post('/admin/brands/add', [BrandController::class, 'post_add_brand'])->name('post_add_brand');
     Route::get('/admin/brands/update/{id}', [BrandController::class, 'get_update_brand'])->name('get_update_brand');
     Route::post('/admin/brands/update/{id}', [BrandController::class, 'post_update_brand'])->name('post_update_brand');
-    Route::delete('/admin/brands/delete{id}', [BrandController::class, 'delete_brand'])->name('delete_brand');
+    Route::delete('/admin/brands/delete/{id}', [BrandController::class, 'delete_brand'])->name('delete_brand');
 
     Route::get('/admin/products', [ProductController::class, 'list_products'])->name('list_products');
     Route::get('/admin/products/add', [ProductController::class, 'get_add_product'])->name('get_add_product');
