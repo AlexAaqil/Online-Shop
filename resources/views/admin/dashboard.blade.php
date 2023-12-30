@@ -44,7 +44,7 @@
                 </div>
                 <div class="text">
                     <h1>Products</h1>
-                    <p>20</p>
+                    <p>{{ $count_products }}</p>
                 </div>
             </div>
 
