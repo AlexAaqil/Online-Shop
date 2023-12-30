@@ -6,7 +6,7 @@
 
     <section class="main_content">
         <div class="header">
-            <h1>Admins</h1>
+            <h1>Users</h1>
             <input type="text" name="search" id="myInput" placeholder="Search" onkeyup="searchFunction()" />
         </div>
 
@@ -25,26 +25,15 @@
                     </thead>
 
                     <tbody class="searchable">
-                        @foreach($list_admins as $admin)
+                        @foreach($list_users as $users)
                         <tr>
-                            <td>{{ $admin->first_name }} {{ $admin->last_name }}</td>
-                            <td>{{ $admin->email }}</td>
-                            <td>{{ $admin->status === 1 ? 'Active' : 'Not Active' }}</td>
+                            <td>{{ $users->first_name }} {{ $users->last_name }}</td>
+                            <td>{{ $users->email }}</td>
+                            <td>{{ $users->status === 1 ? 'Active' : 'Not Active' }}</td>
                             <td>
                                 <div class="actions">
                                     <div class="action">
-                                        <a href="{{ url('/admin/update/'.$admin->id) }}"><i class="fas fa-pencil-alt"></i></a>
-                                    </div>
-
-                                    <div class="action">
-                                        <form id="deleteForm_{{ $admin->id }}" action="{{ route('delete_admin', ['id' => $admin->id]) }}" method="POST">
-                                            @csrf
-                                            @method('DELETE')
-
-                                            <a href="javascript:void(0);" onclick="deleteItem({{ $admin->id }}, 'admin');">
-                                                <i class="fas fa-trash-alt"></i>
-                                            </a>
-                                        </form>
+                                        <a href="{{ url('admin/users/update/'.$users->id) }}"><i class="fas fa-pencil-alt"></i></a>
                                     </div>
                                 </div>
                             </td>

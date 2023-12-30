@@ -9,6 +9,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\ProductController;
 use App\HTTP\Controllers\SubcategoryController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -41,12 +42,14 @@ Route::post('/admin', [AuthController::class,'post_login'])->name('post_login');
 Route::group(['middleware' => 'admin'], function() {
     Route::get('/admin/dashboard', [DashboardController::class,'index'])->name('admin_dashboard');
 
-    Route::get('/admin/list', [AdminController::class,'list_admins'])->name('list_admins');
-    Route::get('/admin/add', [AdminController::class,'get_add_admin'])->name('get_add_admin');
-    Route::post('/admin/add', [AdminController::class,'post_add_admin'])->name('post_add_admin');
-    Route::get('/admin/update/{id}', [AdminController::class,'get_update_admin'])->name('get_update_admin');
-    Route::post('/admin/update/{id}', [AdminController::class,'post_update_admin'])->name('post_update_admin');
-    Route::delete('/admin/delete/{id}', [AdminController::class,'delete_admin'])->name('delete_admin');
+    Route::get('/admin/list', [UserController::class,'list_admins'])->name('list_admins');
+    Route::get('/admin/update/{id}', [UserController::class,'get_update_admin'])->name('get_update_admin');
+    Route::post('/admin/update/{id}', [UserController::class,'post_update_admin'])->name('post_update_admin');
+    Route::delete('/admin/delete/{id}', [UserController::class,'delete_admin'])->name('delete_admin');
+
+    Route::get('/admin/users/list', [UserController::class, 'list_users'])->name('list_users');
+    Route::get('/admin/users/update/{id}', [UserController::class,'get_update_user'])->name('get_update_user');
+    Route::post('/admin/users/update/{id}', [UserController::class,'post_update_user'])->name('post_update_user');
 
     Route::get('/admin/categories', [CategoryController::class, 'list_categories'])->name('list_categories');
     Route::get('/admin/categories/add', [CategoryController::class, 'get_add_category'])->name('get_add_category');
