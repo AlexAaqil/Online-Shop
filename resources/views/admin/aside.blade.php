@@ -7,6 +7,7 @@
         <ul>
             <li><a href="{{ route('admin_dashboard') }}"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
             <li><a href="{{ route('list_admins') }}"><i class="fas fa-users-cog"></i> Admins</a></li>
+            <li><a href="{{ route('list_users') }}"><i class="fas fa-users"></i> Users</a></li>
             <li><a href="{{ route("list_categories") }}"><i class="fas fa-tags"></i> Categories</a></li>
             <li><a href="{{ route("list_sub_categories") }}"><i class="fas fa-list-alt"></i> Sub categories</a></li>
             <li><a href="{{ route('list_brands') }}"><i class="far fa-copyright"></i> Brands</a></li>
