@@ -30,9 +30,14 @@ Route::get('/contact', [HomeController::class,'contact'])->name('contact');
 Route::get('/shop', [ShopController::class, 'shop'])->name('shop');
 Route::get('/shop/{slug}', [ShopController::class, 'categorised_products'])->name('categorised_products');
 
+Route::get('/login', [AuthController::class, 'get_login'])->name('get_login');
+Route::post('/login', [AuthController::class, 'post_login'])->name('post_login');
+Route::get('/signup', [AuthController::class, 'get_signup'])->name('get_signup');
+Route::post('/signup', [AuthController::class, 'post_signup'])->name('post_signup');
 
-Route::get('/admin', [AuthController::class,'admin_login'])->name('admin_login');
-Route::post('/admin', [AuthController::class,'admin_auth_login'])->name('admin_auth_login');
+
+Route::get('/admin', [AuthController::class,'get_login'])->name('get_login');
+Route::post('/admin', [AuthController::class,'post_login'])->name('post_login');
 Route::group(['middleware' => 'admin'], function() {
     Route::get('/admin/dashboard', [DashboardController::class,'index'])->name('admin_dashboard');
 
@@ -73,6 +78,6 @@ Route::group(['middleware' => 'admin'], function() {
     Route::delete('/admin/products/delete/{id}', [ProductController::class, 'delete_product'])->name('delete_product');
     Route::get('/admin/products/delete_product_image/{id}', [ProductController::class, 'delete_product_image'])->name('delete_product_image');
     Route::post('/admin/products/product_images_sort', [ProductController::class, 'product_images_sort'])->name('product_images_sort');
-
-    Route::get('/admin/logout', [AuthController::class,'admin_logout'])->name('admin_logout');
 });
+
+Route::get('/logout', [AuthController::class,'logout'])->name('logout');

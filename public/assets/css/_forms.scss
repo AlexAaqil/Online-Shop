@@ -1,0 +1,145 @@
+form {
+    input,
+    select,
+    textarea {
+        width: 100%;
+        padding: 0.4em 0.6em;
+        font-size: 1em;
+        border: 1px solid grey;
+        border-radius: 4px;
+    }
+
+    button {
+        padding: 10px 32px;
+        font-weight: bold;
+        font-size: 1em;
+        border: none;
+        border-radius: 4px;
+        background: #000;
+        color: #fff;
+    }
+}
+
+.customized_form {
+    h1 {
+        font-size: 1.3em;
+        text-align: center;
+        margin: 0 0 0.5em;
+    }
+
+    form {
+        .input_group {
+            padding: 0.3em 0;
+            width: 100%;
+
+            label {
+                font-weight: 550;
+
+                span {
+                    color: red;
+                }
+            }
+
+            .custom_radio_buttons {
+                display: flex;
+
+                label {
+                    padding: 0.3em 0.2em;
+                    position: relative;
+                    cursor: pointer;
+                    width: 30%;
+                    display: flex;
+                    align-items: center;
+
+                    .option_radio {
+                        position: relative;
+                        margin: 0 0.1em 0 0;
+                        cursor: pointer;
+                        appearance: none;
+                        width: auto;
+                        border: unset;
+                    }
+
+                    .option_radio:before {
+                        -webkit-transition: -webkit-transform 0.4s
+                            cubic-bezier(0.45, 1.8, 0.5, 0.75);
+                        -moz-transition: -moz-transform 0.4s
+                            cubic-bezier(0.45, 1.8, 0.5, 0.75);
+                        transition: transform 0.4s
+                            cubic-bezier(0.45, 1.8, 0.5, 0.75);
+                        -webkit-transform: scale(0, 0);
+                        -moz-transform: scale(0, 0);
+                        -ms-transform: scale(0, 0);
+                        -o-transform: scale(0, 0);
+                        transform: scale(0, 0);
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0.125rem;
+                        z-index: 1;
+                        width: 0.75rem;
+                        height: 0.75rem;
+                        background: #16a085;
+                        border-radius: 50%;
+                    }
+
+                    .option_radio:checked:before {
+                        -webkit-transform: scale(1, 1);
+                        -moz-transform: scale(1, 1);
+                        -ms-transform: scale(1, 1);
+                        -o-transform: scale(1, 1);
+                        transform: scale(1, 1);
+                    }
+
+                    .option_radio:after {
+                        content: "";
+                        position: absolute;
+                        top: -0.25rem;
+                        left: -0.125rem;
+                        width: 1rem;
+                        height: 1rem;
+                        background: #fff;
+                        border: 2px solid #d6d6d6;
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+    }
+
+    p {
+        margin: 0.8em 0 0.5em;
+    }
+}
+
+.Auth {
+    height: 100vh;
+    @include flex_center;
+
+    .container {
+        box-shadow: 2px 4px 8px black;
+        width: 90%;
+        padding: 1em 2em;
+    }
+}
+
+
+@media screen and (width >= 726px) {
+    .customized_form {
+        .row_input_group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0 1em;
+        }
+    }
+
+    .Auth {
+        .Login {
+            width: 35%;
+        }
+
+        .Signup {
+            width: 60%;
+        }
+    }
+}

@@ -9,6 +9,16 @@
     padding: 10px 5%;
 }
 
+@mixin container {
+    padding: 10px 5%;
+}
+
+@mixin flex_center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -81,3 +91,4 @@ table {
 
 @import "admin";
 @import "messages";
+@import "forms";

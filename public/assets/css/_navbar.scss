@@ -11,19 +11,42 @@ nav {
         font-weight: bold;
     }
 
-    .container,
+    .navbar_wrapper,
     ul {
         display: flex;
         align-items: center;
     }
 
-    .container {
+    .navbar_wrapper {
         justify-content: space-between;
+        @include container;
 
         ul {
             list-style: none;
             justify-content: space-evenly;
-            gap: 0 2em;
+
+            li {
+                margin: 0 2em 0 0;
+            }
+
+            .navbar_btn {
+                background: #000;
+                padding: 6px 16px;
+                border-radius: 16px;
+                a {
+                    color: #fff;
+                    text-decoration: none;
+                }
+            }
+
+            .image {
+                margin: 0 0.3em 0 0;
+                img {
+                    border-radius: 50%;
+                    border: 1px solid rgb(219, 219, 219);
+                    object-fit: contain;
+                }
+            }
         }
     }
 }

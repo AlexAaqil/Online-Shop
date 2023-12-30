@@ -27,7 +27,7 @@ class AdminMiddleware
         }
         else {
             Auth::logout();
-            return redirect('admin');
+            return redirect('login');
         }
     }
 }

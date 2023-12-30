@@ -67,18 +67,39 @@ nav a {
   color: #000;
   font-weight: bold;
 }
-nav .container,
+nav .navbar_wrapper,
 nav ul {
   display: flex;
   align-items: center;
 }
-nav .container {
+nav .navbar_wrapper {
   justify-content: space-between;
+  padding: 10px 5%;
 }
-nav .container ul {
+nav .navbar_wrapper ul {
   list-style: none;
   justify-content: space-evenly;
-  gap: 0 2em;
+}
+nav .navbar_wrapper ul li {
+  margin: 0 2em 0 0;
+}
+nav .navbar_wrapper ul .navbar_btn {
+  background: #000;
+  padding: 6px 16px;
+  border-radius: 16px;
+}
+nav .navbar_wrapper ul .navbar_btn a {
+  color: #fff;
+  text-decoration: none;
+}
+nav .navbar_wrapper ul .image {
+  margin: 0 0.3em 0 0;
+}
+nav .navbar_wrapper ul .image img {
+  border-radius: 50%;
+  border: 1px solid rgb(219, 219, 219);
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .Homepage .Hero {
@@ -445,24 +466,6 @@ Footer .copyright {
 .Admin {
   display: flex;
 }
-.Admin form input,
-.Admin form select,
-.Admin form textarea {
-  width: 100%;
-  padding: 0.4em 0.6em;
-  font-size: 1em;
-  border: 1px solid grey;
-  border-radius: 4px;
-}
-.Admin form button {
-  padding: 10px 32px;
-  font-weight: bold;
-  font-size: 1em;
-  border: none;
-  border-radius: 4px;
-  background: #000;
-  color: #fff;
-}
 .Admin aside {
   background: #000;
   color: #fff;
@@ -514,6 +517,7 @@ Footer .copyright {
   border: 2px solid #6b6b6b;
   -o-object-fit: contain;
      object-fit: contain;
+  background: #fff;
 }
 .Admin aside .footer .logout_btn {
   color: tomato;
@@ -600,119 +604,15 @@ Footer .copyright {
 .Admin .Dashboard .statistics .statistic p {
   font-size: 1.1em;
 }
-.Admin .Login {
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.Admin .Login .container {
-  width: 40vh;
-}
-.Admin .Login .container h1 {
-  font-size: 1.4em;
-  margin: 0 0 0.6em;
-  text-transform: uppercase;
-  text-align: center;
-}
-.Admin .Login .container form input {
-  padding: 0.5em 1em;
-  margin: 0 0 0.7em;
-}
-.Admin .Login .container form button {
-  width: 100%;
-}
-.Admin .Login .container p {
-  margin: 1em 0;
-}
-.Admin .customized_form {
-  width: 70%;
-  margin: 1em auto;
-}
-.Admin .customized_form .form_title {
-  text-align: center;
-  padding: 0.5em 0;
-  background: rgb(0, 0, 0);
-  color: #fff;
-}
-.Admin .customized_form .form_title h1 {
-  font-size: 1em;
-}
-.Admin .customized_form form .input_group_row {
-  display: flex;
-  justify-content: space-evenly;
-  gap: 0 1em;
-}
-.Admin .customized_form form .input_group_row .input_group {
-  width: 100%;
-}
-.Admin .customized_form form .input_group {
-  padding: 0.3em 0;
-}
-.Admin .customized_form form .input_group label {
-  font-weight: 550;
-}
-.Admin .customized_form form .input_group label span {
-  color: red;
-}
-.Admin .customized_form form .input_group .custom_radio_buttons {
-  display: flex;
-}
-.Admin .customized_form form .input_group .custom_radio_buttons label {
-  padding: 0.3em 0.2em;
-  position: relative;
-  cursor: pointer;
-  width: 30%;
-  display: flex;
-  align-items: center;
-}
-.Admin .customized_form form .input_group .custom_radio_buttons label .option_radio {
-  position: relative;
-  margin: 0 0.1em 0 0;
-  cursor: pointer;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  width: auto;
-  border: unset;
-}
-.Admin .customized_form form .input_group .custom_radio_buttons label .option_radio:before {
-  transition: transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75);
-  transform: scale(0, 0);
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0.125rem;
-  z-index: 1;
-  width: 0.75rem;
-  height: 0.75rem;
-  background: #16a085;
-  border-radius: 50%;
-}
-.Admin .customized_form form .input_group .custom_radio_buttons label .option_radio:checked:before {
-  transform: scale(1, 1);
-}
-.Admin .customized_form form .input_group .custom_radio_buttons label .option_radio:after {
-  content: "";
-  position: absolute;
-  top: -0.25rem;
-  left: -0.125rem;
-  width: 1rem;
-  height: 1rem;
-  background: #fff;
-  border: 2px solid #d6d6d6;
-  border-radius: 50%;
-}
-.Admin .customized_form form .product_images {
+.Admin .product_images {
   display: flex;
   gap: 0 1em;
   margin: 0.5em 0;
 }
-.Admin .customized_form form .product_images .product_image {
+.Admin .product_images .product_image {
   position: relative;
 }
-.Admin .customized_form form .product_images .product_image img {
+.Admin .product_images .product_image img {
   width: 120px;
   height: 120px;
   -o-object-fit: contain;
@@ -721,7 +621,7 @@ Footer .copyright {
      object-position: center;
   background: rgb(221, 221, 221);
 }
-.Admin .customized_form form .product_images .product_image a {
+.Admin .product_images .product_image a {
   text-decoration: none;
   cursor: pointer;
   position: absolute;
@@ -739,14 +639,6 @@ Footer .copyright {
   height: 30px;
 }
 
-@media screen and (width >= 900px) {
-  .Admin .Login .container {
-    padding: 15px;
-    width: 30%;
-    border: 1px solid rgb(218, 218, 218);
-    box-shadow: 1px 2px 8px black;
-  }
-}
 .alert {
   padding: 0.5em 0;
   margin: 0.1em 0;
@@ -778,4 +670,116 @@ Footer .copyright {
   padding: 0.5em;
   margin: 0.5em 0;
   color: rgb(2, 168, 29);
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 0.4em 0.6em;
+  font-size: 1em;
+  border: 1px solid grey;
+  border-radius: 4px;
+}
+form button {
+  padding: 10px 32px;
+  font-weight: bold;
+  font-size: 1em;
+  border: none;
+  border-radius: 4px;
+  background: #000;
+  color: #fff;
+}
+
+.customized_form h1 {
+  font-size: 1.3em;
+  text-align: center;
+  margin: 0 0 0.5em;
+}
+.customized_form form .input_group {
+  padding: 0.3em 0;
+  width: 100%;
+}
+.customized_form form .input_group label {
+  font-weight: 550;
+}
+.customized_form form .input_group label span {
+  color: red;
+}
+.customized_form form .input_group .custom_radio_buttons {
+  display: flex;
+}
+.customized_form form .input_group .custom_radio_buttons label {
+  padding: 0.3em 0.2em;
+  position: relative;
+  cursor: pointer;
+  width: 30%;
+  display: flex;
+  align-items: center;
+}
+.customized_form form .input_group .custom_radio_buttons label .option_radio {
+  position: relative;
+  margin: 0 0.1em 0 0;
+  cursor: pointer;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: auto;
+  border: unset;
+}
+.customized_form form .input_group .custom_radio_buttons label .option_radio:before {
+  transition: transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75);
+  transform: scale(0, 0);
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0.125rem;
+  z-index: 1;
+  width: 0.75rem;
+  height: 0.75rem;
+  background: #16a085;
+  border-radius: 50%;
+}
+.customized_form form .input_group .custom_radio_buttons label .option_radio:checked:before {
+  transform: scale(1, 1);
+}
+.customized_form form .input_group .custom_radio_buttons label .option_radio:after {
+  content: "";
+  position: absolute;
+  top: -0.25rem;
+  left: -0.125rem;
+  width: 1rem;
+  height: 1rem;
+  background: #fff;
+  border: 2px solid #d6d6d6;
+  border-radius: 50%;
+}
+.customized_form p {
+  margin: 0.8em 0 0.5em;
+}
+
+.Auth {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Auth .container {
+  box-shadow: 2px 4px 8px black;
+  width: 90%;
+  padding: 1em 2em;
+}
+
+@media screen and (width >= 726px) {
+  .customized_form .row_input_group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 1em;
+  }
+  .Auth .Login {
+    width: 35%;
+  }
+  .Auth .Signup {
+    width: 60%;
+  }
 }/*# sourceMappingURL=styles.css.map */
