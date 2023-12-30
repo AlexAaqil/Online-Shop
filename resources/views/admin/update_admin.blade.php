@@ -38,18 +38,35 @@
                         <input type="text" name="password" id="password" placeholder="Enter a new password or leave blank to use the same password" />
                     </div>
 
-                    <div class="input_group">
-                        <label for="status">Status</label>
-                        <div class="custom_radio_buttons">
-                            <label>
-                                <input class="option_radio" type="radio" name="status" id="status" value="1" {{ ($admin->status == 1) ? 'checked' : '' }}>
-                                <span>Active</span>
-                            </label>
+                    <div class="row_input_group">
+                        <div class="input_group">
+                            <label for="status">Status</label>
+                            <div class="custom_radio_buttons">
+                                <label>
+                                    <input class="option_radio" type="radio" name="status" id="status" value="1" {{ ($admin->status == 1) ? 'checked' : '' }}>
+                                    <span>Active</span>
+                                </label>
 
-                            <label>
-                                <input class="option_radio" type="radio" name="status" id="status" value="0" {{ ($admin->status == 0) ? 'checked' : '' }}>
-                                <span>Inactive</span>
-                            </label>
+                                <label>
+                                    <input class="option_radio" type="radio" name="status" id="status" value="0" {{ ($admin->status == 0) ? 'checked' : '' }}>
+                                    <span>Inactive</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="input_group">
+                            <label for="status">User Level</label>
+                            <div class="custom_radio_buttons">
+                                <label>
+                                    <input class="option_radio" type="radio" name="user_level" id="user_level" value="1" {{ ($admin->is_admin == 1) ? 'checked' : '' }}>
+                                    <span>Admin</span>
+                                </label>
+
+                                <label>
+                                    <input class="option_radio" type="radio" name="user_level" id="user_level" value="0" {{ ($admin->is_admin == 0) ? 'checked' : '' }}>
+                                    <span>User</span>
+                                </label>
+                            </div>
                         </div>
                     </div>
 

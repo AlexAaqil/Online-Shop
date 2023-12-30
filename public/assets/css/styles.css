@@ -703,9 +703,6 @@ form button {
 .customized_form form .input_group label {
   font-weight: 550;
 }
-.customized_form form .input_group label span {
-  color: red;
-}
 .customized_form form .input_group .custom_radio_buttons {
   display: flex;
 }
